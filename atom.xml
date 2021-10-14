@@ -3,11 +3,11 @@
   <title>itaru</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://www.itaru.xyz/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://www.itaru.xyz/"/>
   <updated>2021-10-13T09:54:55.990Z</updated>
-  <id>http://example.com/</id>
+  <id>https://www.itaru.xyz/</id>
   
   <author>
     <name>itaru</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2021/10/13/hello-world/"/>
-    <id>http://example.com/2021/10/13/hello-world/</id>
+    <link href="https://www.itaru.xyz/2021/10/13/hello-world/"/>
+    <id>https://www.itaru.xyz/2021/10/13/hello-world/</id>
     <published>2021-10-13T09:54:55.990Z</published>
     <updated>2021-10-13T09:54:55.990Z</updated>
     
