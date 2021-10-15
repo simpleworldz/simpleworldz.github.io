@@ -6,7 +6,7 @@
   <link href="https://www.itaru.xyz/atom.xml" rel="self"/>
   
   <link href="https://www.itaru.xyz/"/>
-  <updated>2021-10-13T09:54:55.990Z</updated>
+  <updated>2021-10-15T14:01:36.222Z</updated>
   <id>https://www.itaru.xyz/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>本站点的搭建</title>
+    <link href="https://www.itaru.xyz/2021/10/15/%E6%9C%AC%E7%AB%99%E7%82%B9%E7%9A%84%E6%90%AD%E5%BB%BA/"/>
+    <id>https://www.itaru.xyz/2021/10/15/%E6%9C%AC%E7%AB%99%E7%82%B9%E7%9A%84%E6%90%AD%E5%BB%BA/</id>
+    <published>2021-10-15T07:37:40.000Z</published>
+    <updated>2021-10-15T14:01:36.222Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="搭建方式的选择"><a href="#搭建方式的选择" class="headerlink" title="搭建方式的选择"></a>搭建方式的选择</h4><p>查询V2ray如何配置pac是发现了这个站点：<a href="https://www.zyskys.com/">零奇部落阁</a>。好羡慕他们拥有自己的站点。正好裸辞在家，想过关时间再去找工作，有不少闲暇时间，那么就开始搭建自己的站点了。</p><p>一开始以为搭建站点需要自己购买服务器，最先是在找便宜且稳定，最好是国内访问速度也还行的服务器。腾讯云和阿里云都太贵了，1M带宽的会比较便宜，但也只是活动价。并且想想1M带宽加载文字还行，加载图片那不得太慢了吧。于是还是决定购买国外的vps。国外的vps带宽是1G起步的，价格是5美元起步，一年将近400块，想想还是肉疼的。vultr美国个别地区的机房有2.5美元一个月的，但只限ipv6，不懂这对网站的布置会有什么限制。</p><p>外国服务器有被墙的风险，据说vultr和搬瓦工是重灾区。为了架设ssr，大概3年前我在vultr中购买过vps，感觉这个vps提供商还不错。并且网上查到了一些可以规避被墙的办法，想想还可以顺带布置下V2ray。于是在vultr布置了一台东京的5美元一个月的服务器，直接选用自带的wordpress。<br>这台位于东京的服务器，ping值不是很高，100左右，丢包80%左右，丢包率比以前高多了。但是访问wordpress时快时慢，有时得转好久。由于vultr是按时间计费的，对当前vps不满，完全可以换一台服务器，不产生额外费用。但最终我没这么选择，感觉wordpress太庞大了点，更关键的是，没找到自己喜欢的主题。</p><p>于是我去了解了下hexo。一开始我以为hexo和wordpress差不多的，这时才发现，他们完全不一样。布置wordpress网站，你得有独立的服务器，但是hexo网站，可以通过github或者coding布置网站。省去购买vps的钱，以及维护vps的时间。并且，主题也比较好看。文章开头提到的个网站，也是用hexo。</p><p>那还有什么好犹豫的呢，直接上hexo。<br>对比wordpress的傻瓜试的点几下鼠标就将能一个网站的大致框架布置好。hexo还是比较复杂点的。</p><h4 id="费用"><a href="#费用" class="headerlink" title="费用"></a>费用</h4><p>只需要购买域名的费用，普通的第一年几块到几十不等，续费会比较贵，但也就几十到一百几。如果是靓号，那多轨的都有。如果你选择使用github提供的<code>yourname.guthub.io</code>形式的域名的话，那么连购买域名也省了。  </p><h4 id="搭建网站"><a href="#搭建网站" class="headerlink" title="搭建网站"></a>搭建网站</h4><p>其实参考<a href="https://www.nesxc.com/post/hexo.html">nesxc的hexo安装教程</a>的第一部分就行，我参考和好几篇hexo教程，这篇是写得最好最详细的。完成了第一部分，其实网站框架就搭建成功了，你可以通过<code><a href="http://yourname.github.io/">http://yourname.github.io</a></code>访问你的网站。</p><h4 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h4><p><a href="https://www.zhihu.com/question/31377141/answer/103056861">github怎么绑定自己的域名</a></p><h4 id="网站更换主题、添加功能以及美化"><a href="#网站更换主题、添加功能以及美化" class="headerlink" title="网站更换主题、添加功能以及美化"></a>网站更换主题、添加功能以及美化</h4><p>如果你和我一样选择的是<code>butterfly</code>可以参考官方网站<a href="https://butterfly.js.org/">butterfly</a>。每个主题都应该有自己的官方网站，照着做就行了。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;搭建方式的选择&quot;&gt;&lt;a href=&quot;#搭建方式的选择&quot; class=&quot;headerlink&quot; title=&quot;搭建方式的选择&quot;&gt;&lt;/a&gt;搭建方式的选择&lt;/h4&gt;&lt;p&gt;查询V2ray如何配置pac是发现了这个站点：&lt;a href=&quot;https://www.zyskys</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
