@@ -6,7 +6,7 @@
   <link href="https://www.itaru.xyz/atom.xml" rel="self"/>
   
   <link href="https://www.itaru.xyz/"/>
-  <updated>2021-10-23T08:53:29.255Z</updated>
+  <updated>2021-10-25T14:15:27.091Z</updated>
   <id>https://www.itaru.xyz/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>配置评论插件Valine的邮件提醒和后台管理系统Valine Admin</title>
+    <link href="https://www.itaru.xyz/blogs/2021-10/%E9%85%8D%E7%BD%AE%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6Valine%E7%9A%84%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%92%8C%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FValine%20Admin.html"/>
+    <id>https://www.itaru.xyz/blogs/2021-10/%E9%85%8D%E7%BD%AE%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6Valine%E7%9A%84%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%92%8C%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FValine%20Admin.html</id>
+    <published>2021-10-25T03:37:57.000Z</published>
+    <updated>2021-10-25T14:15:27.091Z</updated>
+    
+    <content type="html"><![CDATA[<p>配置Valine Admin首先得配置好valine，我使用的是butterfly主题，所以用<a href="https://butterfly.js.org/posts/ceeb73f/#%E8%A9%95%E8%AB%96">主题配置文档</a>中的配置方法。方法是<a href="https://valine.js.org/quickstart.html">先注册个leancloud账号<code>（如果域名未备案，请使用国际版）</code>，创建应用，将APP ID和APP Key添加到</a>主题的_config.yml配置文件中即可。不同的主题，配置方式也会有些不同。<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025114940.png" alt="20211025114940"><br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025145225.png" alt="20211025145225"><br>leancloud自带的后台管理功能不是很友好，是以数据库中表的形式一样展示的。<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025145528.png" alt="20211025145528"><br>所以需要再架设个管理系统。Valine Admin是个带有邮件提醒功能的Valine后台管理系统<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025160109.png" alt="20211025160109"></p><h3 id="配置Valine-Admin"><a href="#配置Valine-Admin" class="headerlink" title="配置Valine Admin"></a>配置Valine Admin</h3><p><a href="https://github.com/DesertsP/Valine-Admin">Valine Admin说明文档</a>中有详细的配置说明，但对于我这个才接触leancloud的小白来说，还是看得一头雾水，踩了不少坑，所以打算写下来。<br><code>云引擎-&gt;WEB-&gt;设置</code>，以下几个参数得注意下<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025150715.png" alt="20211025150715"></p><h4 id="SITE-URL"><a href="#SITE-URL" class="headerlink" title="SITE_URL"></a>SITE_URL</h4><p>后面别加<code>/</code>，比如我这网站填<code>https://www.itaru.xyz</code>，而不是<code>https://www.itaru.xyz/</code>，这个url是用来和下图字段拼接生成评论所在的具体url的。<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025151308.png" alt="20211025151308"></p><h4 id="SMTP-PASS"><a href="#SMTP-PASS" class="headerlink" title="SMTP_PASS"></a>SMTP_PASS</h4><p>如果是用的qq邮箱，填的是开启POP3/SMTP服务之后提供的授权码，而不是独立密码。<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025151604.png" alt="20211025151604"><br>说明中有一句<code>QQ邮箱需要获取独立密码</code>，我以为是填独立密码。于是报了<code>Error: Invalid login: 535 Login Fail. Please enter your authorization code to login</code>错误。文档的意思也许是，你需要开启独立密码登录功能，但这边使用SMTP登录密码登录邮箱。。</p><h4 id="ADMIN-URL"><a href="#ADMIN-URL" class="headerlink" title="ADMIN_URL"></a>ADMIN_URL</h4><p>这个是后台管理页面的url，需要先在<code>设置-&gt;域名绑定</code>中绑定域名。域名可以是<code>xxx.YourDomain</code>的形式。<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025160333.png" alt="20211025160333"><br>第一次绑定时，会提示你配置DNS，即配置CNAME<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025160912.png" alt="20211025160912"><br>如果是非国际版的leancloud，则会检查域名是否备案。所以开头提前说明，域名没有备案，得用国际版。<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025161129.png" alt="20211025161129"></p><h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>设置完参数后<code>部署</code><br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025162407.png" alt="20211025162407"><br>部署成功后，域名加上/sign-up注册用户后，<code>我这是 https://leancloud.itaru.xyz/sign-up</code>，即可登录后台管理系统查看评论。<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025161615.png" alt="20211025161615"><br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025221523.png" alt="20211025221523"><br>另外：体验实例有<a href="https://leancloud.cn/docs/leanengine_plan.html#:~:text=%E4%BD%93%E9%AA%8C%E5%AE%9E%E4%BE%8B%E5%9C%A8%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E7%AD%89%E7%AE%A1%E7%90%86%E6%93%8D%E4%BD%9C%E6%97%B6%E4%BC%9A%E6%9A%82%E5%81%9C%E6%9C%8D%E5%8A%A1%E3%80%82%20%E5%90%8C%E6%97%B6%20%E4%BD%93%E9%AA%8C%E5%AE%9E%E4%BE%8B%E4%BC%9A%E6%89%A7%E8%A1%8C%E4%BC%91%E7%9C%A0%E7%AD%96%E7%95%A5%EF%BC%8C%E6%B2%A1%E6%9C%89%E8%AF%B7%E6%B1%82%E6%97%B6%E4%BC%9A%E4%BC%91%E7%9C%A0%EF%BC%8C%E6%9C%89%E8%AF%B7%E6%B1%82%E6%97%B6%E5%90%AF%E5%8A%A8%EF%BC%88%E9%A6%96%E6%AC%A1%E5%90%AF%E5%8A%A8%E5%8F%AF%E8%83%BD%E9%9C%80%E8%A6%81%E5%8D%81%E5%87%A0%E7%A7%92%E7%9A%84%E6%97%B6%E9%97%B4%EF%BC%89%EF%BC%8C%E6%AF%8F%E5%A4%A9%E6%9C%80%E5%A4%9A%E8%BF%90%E8%A1%8C%2018%20%E4%B8%AA%E5%B0%8F%E6%97%B6">休眠策略</a>，需要设置<a href="https://github.com/DesertsP/Valine-Admin#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E8%AE%BE%E7%BD%AE">定时任务</a>。</p><div class="note info simple"><p>参数配置错误，修改参数后重新部署才会生效。未收到邮件，可查看日志看是否有报错信息。</p></div> ]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;配置Valine Admin首先得配置好valine，我使用的是butterfly主题，所以用&lt;a href=&quot;https://butterfly.js.org/posts/ceeb73f/#%E8%A9%95%E8%AB%96&quot;&gt;主题配置文档&lt;/a&gt;中的配置方法。方法是&lt;</summary>
+      
+    
+    
+    
+    <category term="教程" scheme="https://www.itaru.xyz/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="博客搭建" scheme="https://www.itaru.xyz/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>使用gulp和jsdelivr加快GitHub中搭建的hexo博客的访问速度</title>
@@ -112,26 +136,6 @@
     
     
     <category term="博客搭建" scheme="https://www.itaru.xyz/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://www.itaru.xyz/blogs/2021-10/hello-world.html"/>
-    <id>https://www.itaru.xyz/blogs/2021-10/hello-world.html</id>
-    <published>2021-10-13T09:54:55.990Z</published>
-    <updated>2021-10-22T13:37:19.508Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
-      
-    
-    
-    
     
   </entry>
   
