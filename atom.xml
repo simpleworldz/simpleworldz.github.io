@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>itaru</title>
+  <title>木漏れ日</title>
   
-  
+  <subtitle>Life is not a problem to be solved, but a reality to be experienced.</subtitle>
   <link href="https://www.itaru.xyz/atom.xml" rel="self"/>
   
   <link href="https://www.itaru.xyz/"/>
