@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>配置评论插件Valine的邮件提醒和后台管理系统Valine Admin</title>
+      <link href="/blogs/2021-10/%E9%85%8D%E7%BD%AE%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6Valine%E7%9A%84%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%92%8C%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FValine%20Admin.html"/>
+      <url>/blogs/2021-10/%E9%85%8D%E7%BD%AE%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6Valine%E7%9A%84%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E5%92%8C%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FValine%20Admin.html</url>
+      
+        <content type="html"><![CDATA[<p>配置Valine Admin首先得配置好valine，我使用的是butterfly主题，所以用<a href="https://butterfly.js.org/posts/ceeb73f/#%E8%A9%95%E8%AB%96">主题配置文档</a>中的配置方法。方法是<a href="https://valine.js.org/quickstart.html">先注册个leancloud账号<code>（如果域名未备案，请使用国际版）</code>，创建应用，将APP ID和APP Key添加到</a>主题的_config.yml配置文件中即可。不同的主题，配置方式也会有些不同。<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025114940.png" alt="20211025114940"><br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025145225.png" alt="20211025145225"><br>leancloud自带的后台管理功能不是很友好，是以数据库中表的形式一样展示的。<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025145528.png" alt="20211025145528"><br>所以需要再架设个管理系统。Valine Admin是个带有邮件提醒功能的Valine后台管理系统<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025160109.png" alt="20211025160109"></p><h3 id="配置Valine-Admin"><a href="#配置Valine-Admin" class="headerlink" title="配置Valine Admin"></a>配置Valine Admin</h3><p><a href="https://github.com/DesertsP/Valine-Admin">Valine Admin说明文档</a>中有详细的配置说明，但对于我这个才接触leancloud的小白来说，还是看得一头雾水，踩了不少坑，所以打算写下来。<br><code>云引擎-&gt;WEB-&gt;设置</code>，以下几个参数得注意下<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025150715.png" alt="20211025150715"></p><h4 id="SITE-URL"><a href="#SITE-URL" class="headerlink" title="SITE_URL"></a>SITE_URL</h4><p>后面别加<code>/</code>，比如我这网站填<code>https://www.itaru.xyz</code>，而不是<code>https://www.itaru.xyz/</code>，这个url是用来和下图字段拼接生成评论所在的具体url的。<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025151308.png" alt="20211025151308"></p><h4 id="SMTP-PASS"><a href="#SMTP-PASS" class="headerlink" title="SMTP_PASS"></a>SMTP_PASS</h4><p>如果是用的qq邮箱，填的是开启POP3/SMTP服务之后提供的授权码，而不是独立密码。<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025151604.png" alt="20211025151604"><br>说明中有一句<code>QQ邮箱需要获取独立密码</code>，我以为是填独立密码。于是报了<code>Error: Invalid login: 535 Login Fail. Please enter your authorization code to login</code>错误。文档的意思也许是，你需要开启独立密码登录功能，但这边使用SMTP登录密码登录邮箱。。</p><h4 id="ADMIN-URL"><a href="#ADMIN-URL" class="headerlink" title="ADMIN_URL"></a>ADMIN_URL</h4><p>这个是后台管理页面的url，需要先在<code>设置-&gt;域名绑定</code>中绑定域名。域名可以是<code>xxx.YourDomain</code>的形式。<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025160333.png" alt="20211025160333"><br>第一次绑定时，会提示你配置DNS，即配置CNAME<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025160912.png" alt="20211025160912"><br>如果是非国际版的leancloud，则会检查域名是否备案。所以开头提前说明，域名没有备案，得用国际版。<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025161129.png" alt="20211025161129"></p><h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>设置完参数后<code>部署</code><br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025162407.png" alt="20211025162407"><br>部署成功后，域名加上/sign-up注册用户后，<code>我这是 https://leancloud.itaru.xyz/sign-up</code>，即可登录后台管理系统查看评论。<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025161615.png" alt="20211025161615"><br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211025221523.png" alt="20211025221523"><br>另外：体验实例有<a href="https://leancloud.cn/docs/leanengine_plan.html#:~:text=%E4%BD%93%E9%AA%8C%E5%AE%9E%E4%BE%8B%E5%9C%A8%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E7%AD%89%E7%AE%A1%E7%90%86%E6%93%8D%E4%BD%9C%E6%97%B6%E4%BC%9A%E6%9A%82%E5%81%9C%E6%9C%8D%E5%8A%A1%E3%80%82%20%E5%90%8C%E6%97%B6%20%E4%BD%93%E9%AA%8C%E5%AE%9E%E4%BE%8B%E4%BC%9A%E6%89%A7%E8%A1%8C%E4%BC%91%E7%9C%A0%E7%AD%96%E7%95%A5%EF%BC%8C%E6%B2%A1%E6%9C%89%E8%AF%B7%E6%B1%82%E6%97%B6%E4%BC%9A%E4%BC%91%E7%9C%A0%EF%BC%8C%E6%9C%89%E8%AF%B7%E6%B1%82%E6%97%B6%E5%90%AF%E5%8A%A8%EF%BC%88%E9%A6%96%E6%AC%A1%E5%90%AF%E5%8A%A8%E5%8F%AF%E8%83%BD%E9%9C%80%E8%A6%81%E5%8D%81%E5%87%A0%E7%A7%92%E7%9A%84%E6%97%B6%E9%97%B4%EF%BC%89%EF%BC%8C%E6%AF%8F%E5%A4%A9%E6%9C%80%E5%A4%9A%E8%BF%90%E8%A1%8C%2018%20%E4%B8%AA%E5%B0%8F%E6%97%B6">休眠策略</a>，需要设置<a href="https://github.com/DesertsP/Valine-Admin#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E8%AE%BE%E7%BD%AE">定时任务</a>。</p><div class="note info simple"><p>参数配置错误，修改参数后重新部署才会生效。未收到邮件，可查看日志看是否有报错信息。</p></div> ]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客搭建 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>使用gulp和jsdelivr加快GitHub中搭建的hexo博客的访问速度</title>
+      <link href="/blogs/2021-10/%E4%BD%BF%E7%94%A8gulp%E5%92%8Cjsdelivr%E5%8A%A0%E5%BF%ABGitHub%E4%B8%AD%E6%90%AD%E5%BB%BA%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6.html"/>
+      <url>/blogs/2021-10/%E4%BD%BF%E7%94%A8gulp%E5%92%8Cjsdelivr%E5%8A%A0%E5%BF%ABGitHub%E4%B8%AD%E6%90%AD%E5%BB%BA%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6.html</url>
+      
+        <content type="html"><![CDATA[<p>如果域名已经备案，加快github搭建的hexo博客的访问速度的最好的方法是使用国内厂商提供的CDN。本博客使用的域名目前没有备案，所以用别的方式加速网站的访问。</p><h3 id="1-使用gulp压缩HTML、JS、CSS文件和图片"><a href="#1-使用gulp压缩HTML、JS、CSS文件和图片" class="headerlink" title="1.使用gulp压缩HTML、JS、CSS文件和图片"></a>1.使用gulp压缩HTML、JS、CSS文件和图片</h3><p>不喜欢重复造轮子，直接贴出我认为写得比较好的文章 <a href="https://blog.imzjw.cn/posts/b74f504f/#:~:text=gulp%20%E5%8E%8B%E7%BC%A9">gulp 压缩</a>。</p><p>以 css\index.css 查看其效果。</p><p>压缩前：<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211022145941.png" alt="20211022145941"><br>压缩后:<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211022150029.png" alt="20211022150029"></p><p>主页访问速度</p><div class="note simple"><p>即使有勾选清空缓存，每次刷新网页访问速度都会有差别，有时差别还特别大。这边截取的是我认为比较有代表性的两张图。总的来说，访问速度有提高，压缩率越高，访问速度提高得也越多。</p></div><p>压缩前：<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211022151514.png" alt="20211022151514"><br>压缩后：<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211022151529.png" alt="20211022151529"></p><h3 id="2-使用jsdelivr提供的免费CDN加速JS、CSS文件和图片"><a href="#2-使用jsdelivr提供的免费CDN加速JS、CSS文件和图片" class="headerlink" title="2.使用jsdelivr提供的免费CDN加速JS、CSS文件和图片"></a>2.使用jsdelivr提供的免费CDN加速JS、CSS文件和图片</h3><a href="/blogs/2021-10/GitHub%E5%9B%BE%E5%BA%8A%E8%A2%AB%E5%A2%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html" title="GitHub图床被墙的解决方案">GitHub图床被墙的解决方案</a>的方案二有提到使用jsdelivr加速图床，其实jsdelivr还可以用来加速博客中的文件。<p>在主题的_config.yml的配置文件中的JS、CSS文件和图片的相对路径前添加</p><pre>https://cdn.jsdelivr.net/gh/YourGithubName/blogRepoName</pre><p>包括但不限于以下几项：<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211022152107.png" alt="20211022152107"><br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211022152124.png" alt="20211022152124"><br>这个方法加速还是挺明显的<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211022152348.png" alt="20211022152348"></p><div class="note warning simple"><p>这个方法会导致本地调试时也访问github中的相应文件。相应文件在本地有改动时，本地调试使用的还是github上的版本。</p></div><p>后来又发现了个问题，jsdelivr会在第一次访问某url时去获取github中相应的文件，然后缓存起来，之后访问会使用缓存的文件。也就是说，<a href="https://github.com/BNDong/Cnblogs-Theme-SimpleMemory/issues/42">更新的文件不会立即生效</a>，官方文档中说大概<a href="https://github.com/jsdelivr/jsdelivr#:~:text=Branches%20-%2012%20hours">12小时更新一次缓存</a>。<code>如果想要即时生效，得更改文件的名字，如将index.css改为index1.1.css，_config.yml中设置的url也得一并改。</code></p><p><a href="https://zhuanlan.zhihu.com/p/336641644#:~:text=%E6%9B%B4%E6%96%B0%E4%B8%80%E6%AC%A1%E5%B0%B1%E6%9B%B4%E6%96%B0%E4%B8%80%E4%B8%8B%E7%89%88%E6%9C%AC">这里还有个常用的方法</a>，这个方法每次更新或新增都得release新版本。更改其中一个css文件就得release这一点，感觉会比上述方法麻烦。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客搭建 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>GitHub图床被墙的解决方案</title>
+      <link href="/blogs/2021-10/GitHub%E5%9B%BE%E5%BA%8A%E8%A2%AB%E5%A2%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html"/>
+      <url>/blogs/2021-10/GitHub%E5%9B%BE%E5%BA%8A%E8%A2%AB%E5%A2%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html</url>
+      
+        <content type="html"><![CDATA[<p>我是参考 <a href="https://blog.csdn.net/qq_43827595/article/details/104274769">10分钟配置 VScode插件picgo + github免费图床，实现Markdown写作高效插图</a> 这篇文章搭建图床的。教程写的很清楚，搭建得顺利。但picgo插件提供的默认域名 <code>raw<span>.</span>githubusercontent<span>.</span>com</code>被墙了，大陆无法加载图片。于是寻找解决方法。</p><div class="note info simple"><p>方法一算是我踩得一个坑，但也挺有借鉴意义的。方法二才是真正简便高效的解决方案。直接看<a href="#%E6%96%B9%E6%B3%95%E4%BA%8C-%E4%BD%BF%E7%94%A8jsdelivr">方法二</a>也无妨。</p></div><h3 id="方法一-给图床添加自定义域名"><a href="#方法一-给图床添加自定义域名" class="headerlink" title="方法一 给图床添加自定义域名"></a>方法一 给图床添加自定义域名</h3><h4 id="1-给图床repo添加CNAME和index-html-两个文件夹"><a href="#1-给图床repo添加CNAME和index-html-两个文件夹" class="headerlink" title="1. 给图床repo添加CNAME和index.html 两个文件夹"></a>1. 给图床repo添加CNAME和index.html 两个文件夹</h4><p><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/1634526849(1).png" alt="1634526849(1)"><br>CNAME中添加自定义域名，indxe.html可以为空也可以是任意内容。<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211018111942.png" alt="20211018111942"></p><h4 id="2-DNS域名解析添加CNAME"><a href="#2-DNS域名解析添加CNAME" class="headerlink" title="2. DNS域名解析添加CNAME"></a>2. DNS域名解析添加CNAME</h4><p><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211018112439.png" alt="20211018112439"><br>不添加这个，域名会ping不通。<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211019163405.png" alt="20211019163405"><br>少了这一步直接配置网站的话，github中也会提示出错。<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211019162717.png" alt="20211019162717"><br>等待3、4分钟，直到域名能ping通。<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211019163510.png" alt="20211019163510"></p><h4 id="3-repo设置网站"><a href="#3-repo设置网站" class="headerlink" title="3. repo设置网站"></a>3. repo设置网站</h4><p><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/1634527597(1).png" alt="1634527597(1)"><br>配置完成后，等待几秒github布置网站。打开网站看是否生效，<code>我这是 <a href="https://ih.itaru.xyz/">https://ih.itaru.xyz/</a></code>。</p><h4 id="4-将vscode中picgo插件设置github的Customer-Url改为自己的域名"><a href="#4-将vscode中picgo插件设置github的Customer-Url改为自己的域名" class="headerlink" title="4. 将vscode中picgo插件设置github的Customer Url改为自己的域名"></a>4. 将vscode中picgo插件设置github的Customer Url改为自己的域名</h4><p><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211018113429.png" alt="20211018113429"></p><h4 id="5-结果"><a href="#5-结果" class="headerlink" title="5. 结果"></a>5. 结果</h4><p>这样一来，图床可以以原先就行的<code><a href="https://raw.githubusercontent.com/simpleworldz/ImageHost/master/images/kyojin.png">https://raw.githubusercontent.com/simpleworldz/ImageHost/master/images/kyojin.png</a></code><br>和后来添加的<br><code><a href="https://ih.itaru.xyz/images/kyojin.png">https://ih.itaru.xyz/images/kyojin.png</a></code><br>两种形式访问。后者没有被墙。</p><p>为什么说是这方法是我踩得一个坑，因为虽然不被墙了，但github的服务器在海外，大陆加载图片特别慢，一张1M的图片需要加载10几秒。</p><p>提速可以使用CDN，这个被我放弃了，<a href="/blogs/2021-10/%E7%BD%91%E7%AB%99%E5%A4%87%E6%A1%88%20%E4%BB%8E%E5%BC%80%E5%A7%8B%E5%88%B0%E6%94%BE%E5%BC%83.html" title="网站备案 从开始到放弃">网站备案 从开始到放弃</a> 这篇文章有说明原因。还有一种解决方案是再在coding中布置一个相同的博客网站，coding的服务器大陆访问比较快，用于大陆节点的访问，github中的网站用户海外节点的访问。</p><h3 id="方法二-使用jsdelivr"><a href="#方法二-使用jsdelivr" class="headerlink" title="方法二 使用jsdelivr"></a>方法二 使用jsdelivr</h3><p>方法一结尾提到的两种改善访问速度的方法都不是很想用，想可否用更换图床插件的方式解决。于是注意到了一开始就看到，但是被我忽略的那篇文章， <a href="https://blog.csdn.net/qq_41121080/article/details/105565405">VSCode + Github + Picgo + jsDelivr 搭建稳定快速高效图床</a> 。一开始没用这篇文章的原因是开头提到的那篇文章写得比较仔细。</p><p><b>没啥要做的，就一步，将vscode中picgo插件设置github的Customer Url改为 </b></p><pre>https://cdn.jsdelivr.net/gh/YourGithubName/RepoName</pre><p><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211018161358.png" alt="20211018161358"></p><p>生成的url示例<br><code><a href="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/kyojin.png">https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/kyojin.png</a></code></p><p>方法一和方法二不冲突，如果做了方法一只是让图床中的图片多了一种访问方式。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客搭建 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>网站备案 从开始到放弃</title>
+      <link href="/blogs/2021-10/%E7%BD%91%E7%AB%99%E5%A4%87%E6%A1%88%20%E4%BB%8E%E5%BC%80%E5%A7%8B%E5%88%B0%E6%94%BE%E5%BC%83.html"/>
+      <url>/blogs/2021-10/%E7%BD%91%E7%AB%99%E5%A4%87%E6%A1%88%20%E4%BB%8E%E5%BC%80%E5%A7%8B%E5%88%B0%E6%94%BE%E5%BC%83.html</url>
+      
+        <content type="html"><![CDATA[<p>今天想给网站做个CDN，以提高国内的访问速度。据说github搭建的网站访问速度不是很给力。我自己的访问速度倒是还行，奈何可能其他省份，其他运营商的网访问速度欠佳呢。在腾讯云的CDN中添加域名，提示域名没有备案，于是打算去备案。</p><h3 id="开始备案"><a href="#开始备案" class="headerlink" title="开始备案"></a>开始备案</h3><p>腾讯云有自带的备案系统，录入信息时又发现备案需要云服务器，而我没有购买云服务器。那么，就去寻找别的域名备案的方法。</p><p>半个小时过去了，竟是找不到代替的备案方式。渐渐烦躁，没道理啊，备案很多人做，那么网上应该有很多教程才对。我以前也有过类似的经历，一个很多人使用的工具报错了，网上却怎么也找不到解决方案。毫无例外都是我犯了如名称、格式搞错了，或者是按着教程做，却漏了一步之类的低级错误。</p><div class="note blue no-icon simple"><p>当一个你认为是很普遍的问题，却在网上怎么也找不到解决方法时，往往是你犯了特别低级的错误，或者是前提条件就是错的。</p></div><p>该不会是<code>备案域名，必须购买一台云服务器</code>？网上说是或不是的说法都有，说是的比较多，我感觉必须要有服务器的论调比较可信。说不需要的人，你倒是给个方法啊。我半天都没搜。</p><h3 id="放弃备案"><a href="#放弃备案" class="headerlink" title="放弃备案"></a>放弃备案</h3><p><b>服务器在海外的网站，本就不用备案，基于github的博客是不用备案的。</b><code>写到这边，我发现个华点，既然需不需要备案和服务器所在地址有关，那备案看来是真的需要一台服务器。</code>备案所需时间大概需要20-30天，这期间是不能使用域名的。有人通过租用短期服务器的方法给网站备案，但这也有被回收备案的风险。还有人说一台服务器有5个备案号，可以备案5个域名，可以向已有云服务器的人要。</p><p>hexo有些插件是必须域名备案后才能使用的，并且国内的一些服务，如CDN和微信小程序衔接之类的需要备案。</p><p><b>对于我这个新生不到一周的小小个人网站，还是先把备案一事放一放吧，以后再看有没有必要。</b></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客搭建 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>本站点的搭建</title>
+      <link href="/blogs/2021-10/%E6%9C%AC%E7%AB%99%E7%82%B9%E7%9A%84%E6%90%AD%E5%BB%BA.html"/>
+      <url>/blogs/2021-10/%E6%9C%AC%E7%AB%99%E7%82%B9%E7%9A%84%E6%90%AD%E5%BB%BA.html</url>
+      
+        <content type="html"><![CDATA[<p>查询v2ray如何配置pac时发现了这个站点：<a href="https://www.zyskys.com/">零奇部落阁</a>。好羡慕他们拥有自己的站点。正好裸辞在家，想过段时间再去找工作，有不少闲暇时间，就开始搭建自己的站点了。</p><div class="note blue no-icon simple"><p>以前公司给我钱，我为公司工作；现在没人给我钱了，我为自己做事。</p></div><h3 id="搭建方式的选择"><a href="#搭建方式的选择" class="headerlink" title="搭建方式的选择"></a>搭建方式的选择</h3><p>我以为搭建站点需要自己购买服务器，一开始的方向是在找便宜且稳定，最好是国内访问速度也还行的服务器。腾讯云和阿里云都太贵了，1M带宽的会比较便宜，但也只是活动价。并且想想1M带宽加载文字还行，加载图片那不得太慢了吧。还是决定购买国外的vps。国外的vps带宽是1G起步的，价格是5美元起步，一年将近400块，想想还是肉疼的。vultr美国个别地区的机房有2.5美元一个月的，但只限ipv6，不懂这对网站的布置会有什么限制。</p><p><b>外国服务器有被墙的风险</b>，据说vultr和搬瓦工是重灾区。为了架设ssr，大概3年前我在vultr中购买过vps，感觉这个vps提供商还不错。并且网上查到了一些可以规避被墙的办法，想想还可以顺带布置下v2ray。于是在vultr购买了一台东京的5美元一个月的服务器，直接选用自带的wordpress。</p><p><b>这台位于东京的服务器，ping值不是很高，100左右，丢包80%左右，丢包率比以前高多了。</b>访问wordpress时快时慢，有时得转好久。由于vultr是按时间计费的，对当前vps不满，完全可以换一台服务器，不产生额外费用。但最终我没这么选择，感觉wordpress庞大笨重了点，更关键的是，没找到自己喜欢的<code>主题</code>。</p><p>于是我去了解了下<code>hexo</code>。一开始我以为hexo和wordpress是差不多的，这时才发现，他们完全不一样。布置wordpress网站，你得有独立的服务器，但是hexo网站，可以通过github或者coding布置网站。省去购买vps的钱，以及维护vps的时间。并且，<code>主题也比较好看</code>。文章开头提到的那个网站，也是用hexo的搭建的。</p><p>那还有什么好犹豫的呢，直接上hexo。</p><p>对比wordpress的傻瓜试的点几下鼠标就将能一个网站的大致框架布置好。hexo还是比较复杂点的。</p><h3 id="费用"><a href="#费用" class="headerlink" title="费用"></a>费用</h3><p>只需要购买域名的费用，普通的第一年几块到几十不等，续费会比较贵，但也就几十到一百几。如果是靓号，那多贵的都有。如果你选择使用github提供的<code>YourGithubName.github.io</code>形式的域名的话，那么连购买域名也省了。</p><h3 id="搭建网站"><a href="#搭建网站" class="headerlink" title="搭建网站"></a>搭建网站</h3><p>其实参考<a href="https://www.nesxc.com/post/hexo.html">nesxc的hexo安装教程</a>的第一部分就行，我参考了好几篇hexo教程，这篇是写得最好最详细的。完成了第一部分，其实网站框架就搭建成功了，你可以通过<code>http:<span>//</span>YourGithubName<span>.</span>github<span>.</span>io</code>访问你的网站。</p><h3 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h3><p>可以参考这个，<a href="https://www.zhihu.com/question/31377141/answer/103056861">github怎么绑定自己的域名</a>。</p><h3 id="网站更换主题、添加功能以及美化"><a href="#网站更换主题、添加功能以及美化" class="headerlink" title="网站更换主题、添加功能以及美化"></a>网站更换主题、添加功能以及美化</h3><p>如果你和我一样选择的是<code>butterfly</code>可以参考官方网站<a href="https://butterfly.js.org/">butterfly</a>。每个主题都应该有自己的官方网站，照着做就行了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客搭建 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
