@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.itaru.xyz/blogs/859740d4.html</loc>
+    
+    <lastmod>2021-11-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.itaru.xyz/blogs/bfcce7e4.html</loc>
+    
+    <lastmod>2021-11-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.itaru.xyz/blogs/1839fcb6.html</loc>
     
     <lastmod>2021-10-30</lastmod>
@@ -17,20 +31,6 @@
   
   <url>
     <loc>https://www.itaru.xyz/blogs/2116d0e1.html</loc>
-    
-    <lastmod>2021-10-30</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.itaru.xyz/blogs/bfcce7e4.html</loc>
-    
-    <lastmod>2021-10-30</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.itaru.xyz/blogs/859740d4.html</loc>
     
     <lastmod>2021-10-30</lastmod>
     
@@ -95,7 +95,7 @@
 
   <url>
     <loc>https://www.itaru.xyz/</loc>
-    <lastmod>2021-10-30</lastmod>
+    <lastmod>2021-11-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -103,28 +103,28 @@
   
   <url>
     <loc>https://www.itaru.xyz/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2021-10-30</lastmod>
+    <lastmod>2021-11-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.itaru.xyz/tags/hexo/</loc>
-    <lastmod>2021-10-30</lastmod>
+    <lastmod>2021-11-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.itaru.xyz/tags/kindle/</loc>
-    <lastmod>2021-10-30</lastmod>
+    <lastmod>2021-11-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.itaru.xyz/tags/%E6%97%A5%E4%BA%9A/</loc>
-    <lastmod>2021-10-30</lastmod>
+    <lastmod>2021-11-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -133,28 +133,28 @@
   
   <url>
     <loc>https://www.itaru.xyz/categories/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2021-10-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.itaru.xyz/categories/%E6%95%99%E7%A8%8B/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2021-10-30</lastmod>
+    <lastmod>2021-11-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.itaru.xyz/categories/%E6%95%99%E7%A8%8B/kindle/</loc>
-    <lastmod>2021-10-30</lastmod>
+    <lastmod>2021-11-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.itaru.xyz/categories/%E6%95%99%E7%A8%8B/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2021-11-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.itaru.xyz/categories/%E6%95%99%E7%A8%8B/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/hexo/</loc>
-    <lastmod>2021-10-30</lastmod>
+    <lastmod>2021-11-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
