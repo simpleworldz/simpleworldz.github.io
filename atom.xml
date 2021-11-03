@@ -6,7 +6,7 @@
   <link href="https://www.itaru.xyz/atom.xml" rel="self"/>
   
   <link href="https://www.itaru.xyz/"/>
-  <updated>2021-11-02T13:49:01.026Z</updated>
+  <updated>2021-11-02T14:06:52.051Z</updated>
   <id>https://www.itaru.xyz/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.itaru.xyz/blogs/a6dbf255.html"/>
     <id>https://www.itaru.xyz/blogs/a6dbf255.html</id>
     <published>2021-11-02T07:47:43.000Z</published>
-    <updated>2021-11-02T13:49:01.026Z</updated>
+    <updated>2021-11-02T14:06:52.051Z</updated>
     
     <content type="html"><![CDATA[<p>自从9月份开启无线活力以来，我已经不懂几次下了删，删了下英雄联盟了。每次都想着每天玩个几局就行，可毫无例外，每次都上头，一玩就是没个停。然后就是后悔，决定卸载游戏，可没过几天又下载。想起了我大学时的有个舍友，他也是这样英雄联盟下载卸载反反复复。</p><p>这回下载完，打开英雄联盟客户端，发现耳机没声音了，并且按耳机的按键会有 咚咚咚 的响声。顺带一提，我用的是索尼wi-1000xm2无线蓝牙耳机，电脑系统是win10。</p><h3 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h3><p>以前当播放设备从 Stereo 切换成 Hands-Free 时，点击耳机按键也会有 咚咚咚 的声音。只是这种情况时耳机不会没有声音，反而声音特别大。<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211102210157.png" alt="20211102210157"><br>这回不是这个原因，其实一开始并不知道是英雄联盟客户端的原因。我只是在尝试各种方法，比如蓝牙重新配对；删了蓝牙驱动后重启<code>（重启电脑时，系统会自动检查缺少的驱动并重新安装）</code> 等等。以为解决了，开启英雄联盟客户端又出现同样的问题，才确定是和英雄联盟客户端有关。后来查了下，和猜测的差不多，是麦克风的问题。</p><p><code>由于我把电脑自带的麦克风禁用了，客户端自动使用耳机的麦克风，于是出现了这个问题。</code><br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211102212125.png" alt="20211102212125"></p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>有三种方式解决这个问题。</p><h4 id="方法一：客户端中点击测试麦克风"><a href="#方法一：客户端中点击测试麦克风" class="headerlink" title="方法一：客户端中点击测试麦克风"></a>方法一：客户端中点击测试麦克风</h4><p>这个方法每次打开客户端都得重新再来一遍。<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211102212216.png" alt="20211102212216"></p><h4 id="方法二：客户端语音设置中的输入设备选择电脑自带的麦克风"><a href="#方法二：客户端语音设置中的输入设备选择电脑自带的麦克风" class="headerlink" title="方法二：客户端语音设置中的输入设备选择电脑自带的麦克风"></a>方法二：客户端语音设置中的输入设备选择电脑自带的麦克风</h4><p>如果电脑自带麦克风被禁用了，得开启。<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211102212740.png" alt="20211102212740"></p><h4 id="方法三：电脑设置中关闭允许应用访问你的麦克风"><a href="#方法三：电脑设置中关闭允许应用访问你的麦克风" class="headerlink" title="方法三：电脑设置中关闭允许应用访问你的麦克风"></a>方法三：电脑设置中关闭允许应用访问你的麦克风</h4><p>设置-&gt;隐私-&gt;麦克风<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211102213049.png" alt="20211102213049"></p><p><b>在客户端中禁用语音的方法没试过，游戏已卸载，没法试了。</b></p>]]></content>
     
