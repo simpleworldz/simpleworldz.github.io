@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>图片上传到博客后被自动拉伸的原因</title>
+      <link href="/blogs/eda0a079.html"/>
+      <url>/blogs/eda0a079.html</url>
+      
+        <content type="html"><![CDATA[<p>写上一篇文章的时候遇到一个问题，图片上传到博客后长宽都被自动拉伸到了原先的1.5倍。</p><div class="note info simple"><p>只有部分人的电脑会出现这个问题，这和电脑的设置有关。</p></div><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>使用微信截图工具截一个 300 x 200 的图片。<br>上传到博客后，这图占据的大小成了 450 x 300，但其实图片的像素还是 300 x 200。</p><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/小电视.png" align='left' /><p><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/1636119728(1).png" alt="1636119728(1)"><br><b>另外：</b><br>不仅是自己的博客，其他网页也会出现图片占用大小比实际像素多的情况。<br>将图片放入OneNote中，图片也会被放大。<br>用ImageClass或电脑自带的画图软件打开图片，图片则没有被放大。</p><h3 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h3><p><code>显示-&gt;缩放与布局-&gt;更改文本、应用等项目的大小 默认设置为了150%。</code><br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211105214515.png" alt="20211105214515"><br><b>推荐值和屏幕的大小以及分辨率有关，设置成自己感觉最舒服的值即可，这个值往往就是推荐值。所以这个没必要改，只是知道原因就行。图片也没必要做处理，毕竟每个人的设置可能不一样。</b></p><h3 id="参考网站"><a href="#参考网站" class="headerlink" title="参考网站"></a>参考网站</h3><p><a href="https://www.itechtics.com/resolution-scaling-layout/">How To Optimize resolution, scaling, and layout in Windows 10</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 问题排除 </category>
+          
+          <category> 写博客 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 问题排除 </tag>
+            
+            <tag> 写博客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>打开英雄联盟客户端后耳机没声音的解决方案</title>
       <link href="/blogs/a6dbf255.html"/>
       <url>/blogs/a6dbf255.html</url>
@@ -13,7 +42,7 @@
       
       <categories>
           
-          <category> 解决方案 </category>
+          <category> 问题排除 </category>
           
           <category> 耳机 </category>
           
@@ -21,6 +50,8 @@
       
       
         <tags>
+            
+            <tag> 问题排除 </tag>
             
             <tag> 耳机 </tag>
             
