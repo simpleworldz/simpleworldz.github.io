@@ -6,7 +6,7 @@
   <link href="https://www.itaru.xyz/atom.xml" rel="self"/>
   
   <link href="https://www.itaru.xyz/"/>
-  <updated>2021-12-04T14:12:58.064Z</updated>
+  <updated>2021-12-10T12:08:52.633Z</updated>
   <id>https://www.itaru.xyz/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.itaru.xyz/blogs/6b4f6d08.html"/>
     <id>https://www.itaru.xyz/blogs/6b4f6d08.html</id>
     <published>2021-12-02T14:06:08.000Z</published>
-    <updated>2021-12-04T14:12:58.064Z</updated>
+    <updated>2021-12-10T12:08:52.633Z</updated>
     
     <content type="html"><![CDATA[<h3 id="text"><a href="#text" class="headerlink" title="#:~:text="></a>#:~:text=</h3><p>Url + #:~:text= + text 可定位并高亮显示text。</p><p>点击以下链接测试效果：</p><p><a href="https://www.itaru.xyz/blogs/6b4f6d08.html#:~:text=%E7%82%B9%E5%87%BB%E4%BB%A5%E4%B8%8B%E9%93%BE%E6%8E%A5%E6%B5%8B%E8%AF%95%E6%95%88%E6%9E%9C">https://www.itaru.xyz/blogs/6b4f6d08.html#:~:text=点击以下链接测试效果</a></p><h3 id="Programmable-Search-Engine"><a href="#Programmable-Search-Engine" class="headerlink" title="Programmable Search Engine"></a>Programmable Search Engine</h3><p><a href="https://programmablesearchengine.google.com/about/">Programmable Search Engine</a> 可以看做是 site:domain 的升级版。</p><p>添加几个网站，点击创建。<br><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211203220642.png" alt="20211203220642"></p><p>效果：</p><script async src="https://cse.google.com/cse.js?cx=172f19e93bd715f48"></script><div class="gcse-search"></div><p>或者也可以这么用：<a href="https://cse.google.com/cse?cx=172f19e93bd715f48">编程网址</a></p><p>如果你自己的网站能被谷歌很好的收录，也可以使用 Programmable Search Engine 创建自己的站点的搜索引擎。效果类似于本站顶部的搜索，但本站使用的是专门用于hexo的 <a href="https://github.com/wzpan/hexo-generator-search">hexo-generator-search</a>。</p><h3 id="MEMEX"><a href="#MEMEX" class="headerlink" title="MEMEX"></a>MEMEX</h3><p><a href="https://memex.garden/">WorldBrain’s Memex</a> 是一个浏览器扩展，<a href="https://github.com/WorldBrain/Memex#:~:text=full-text%20search%20your%20browsing%20history%20&%20bookmarks">可以全文检索你的浏览历史记录和书签</a>。</p><p>Chrome书签管理器中的搜索框只能根据书签的标题进行检索，而这个Google插件可以对书签进行全文检索。</p><p>效果：</p><p><img src="https://cdn.jsdelivr.net/gh/simpleworldz/ImageHost/images/20211203222740.png" alt="20211203222740"></p>]]></content>
     
