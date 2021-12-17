@@ -6,7 +6,7 @@
   <link href="https://www.itaru.xyz/atom.xml" rel="self"/>
   
   <link href="https://www.itaru.xyz/"/>
-  <updated>2021-12-17T11:56:27.775Z</updated>
+  <updated>2021-12-17T11:59:12.773Z</updated>
   <id>https://www.itaru.xyz/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.itaru.xyz/blogs/a2a26768.html"/>
     <id>https://www.itaru.xyz/blogs/a2a26768.html</id>
     <published>2021-12-17T00:41:27.000Z</published>
-    <updated>2021-12-17T11:56:27.775Z</updated>
+    <updated>2021-12-17T11:59:12.773Z</updated>
     
     <content type="html"><![CDATA[<h3 id="序列化与反序列化"><a href="#序列化与反序列化" class="headerlink" title="序列化与反序列化"></a>序列化与反序列化</h3><p>序列化：序列化是将对象转化为可以写入流的形式的过程。它是将对象转换为一种形式以便将其存储在文件、数据库或内存中的过程，并且它可以通过网络传输。它的主要目的是保存对象的状态，以便在需要时可以重新创建。</p><p>反序列化：反序列化是序列化的逆过程。它是取回序列化对象以便将其加载到内存中的过程。它通过设置属性、字段等来恢复对象的状态。</p><p>参考：<a href="https://www.c-sharpcorner.com/article/serialization-and-deserialization-in-c-sharp/">Serialization and Deserialization in C#</a></p><h3 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h3><p>线程同步是一种机制，可确保两个或多个并发进程或线程不同时执行程序的某些特定部分，尤其是临界区。在这种技术中，一个线程执行程序的临界区，另一个线程等待第一个线程完成执行。如果不应用适当的同步机制，则会发生竞态条件。</p><p>实现方式：</p><ul><li>阻塞</li><li>加互斥锁</li><li>信号和句柄</li><li>非阻塞同步</li></ul><p>详情：<a href="https://www.c-sharpcorner.com/UploadFile/1c8574/thread-synchronization/">Thread Synchronization - C#Corner</a></p><h3 id="内存溢出-和-内存泄露"><a href="#内存溢出-和-内存泄露" class="headerlink" title="内存溢出 和 内存泄露"></a>内存溢出 和 内存泄露</h3><h4 id="内存溢出"><a href="#内存溢出" class="headerlink" title="内存溢出"></a>内存溢出</h4><p>指程序在运行的过程中，程序对内存的需求超过了计算机分配给程序的内存，从而造成“Out of memory”之类的错误，使程序不能正常运行。</p><p>造成内存溢出有几种情况： </p><ol><li>计算机本身的内存小。当同时运行多个软件时，计算机的内存不够用从而造成内存溢出。对于这种情况，只能增加计算机内存来解决。 </li><li>软件程序的问题。程序在运行时没能及时释放不用的内存，造成使用的内存越来越大从而造成内存溢出。对于这种情况，可以修改程序的代码来解决。</li></ol><h4 id="内存泄露"><a href="#内存泄露" class="headerlink" title="内存泄露"></a>内存泄露</h4><p>内存泄漏指由于疏忽或错误造成程序不能释放或不能及时释放已经不再使用的内存的情况，是应用程序分配某段内存后，由于设计错误，失去了对该段内存的控制，因而造成了内存不能回收或不能及时回收。当程序不能释放的内存越来越多时就会造成程序的性能下降或出现内存溢出的错误。</p><p>参考：<a href="https://www.cnblogs.com/bile/p/4966796.html">浅析c#内存泄漏</a></p><h3 id="高内聚-低耦合"><a href="#高内聚-低耦合" class="headerlink" title="高内聚 低耦合"></a>高内聚 低耦合</h3><ul><li><p>高内聚：内聚度是指<code>一个模块/类</code>的元素之间的归属程度，建议相关联的代码应该彼此靠近，所以我们应该争取高内聚度，尽可能地将所有相关联的代码绑定在一起。它与模块/类中的元素有关。 </p></li><li><p>低耦合：耦合度是指<code>不同模块/类</code>相互依赖的程度，建议所有模块尽可能独立，这就是争取低耦合的原因。它与不同模块/类之间的元素有关。</p></li></ul><p>参考：<a href="https://stackoverflow.com/a/14000957/8910566">What does ‘low in coupling and high in cohesion’ mean</a></p>]]></content>
     
