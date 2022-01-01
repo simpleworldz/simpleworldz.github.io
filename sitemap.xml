@@ -2,20 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.itaru.xyz/blogs/9f8c60c3.html</loc>
-    
-    <lastmod>2021-12-31</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.itaru.xyz/blogs/eda0a079.html</loc>
-    
-    <lastmod>2021-12-31</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.itaru.xyz/blogs/e7630f6f.html</loc>
     
     <lastmod>2021-12-31</lastmod>
@@ -30,7 +16,14 @@
   </url>
   
   <url>
-    <loc>https://www.itaru.xyz/blogs/a6dbf255.html</loc>
+    <loc>https://www.itaru.xyz/blogs/9f8c60c3.html</loc>
+    
+    <lastmod>2021-12-31</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.itaru.xyz/blogs/eda0a079.html</loc>
     
     <lastmod>2021-12-31</lastmod>
     
@@ -44,14 +37,14 @@
   </url>
   
   <url>
-    <loc>https://www.itaru.xyz/blogs/2116d0e1.html</loc>
+    <loc>https://www.itaru.xyz/blogs/859740d4.html</loc>
     
     <lastmod>2021-12-31</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.itaru.xyz/blogs/859740d4.html</loc>
+    <loc>https://www.itaru.xyz/blogs/2116d0e1.html</loc>
     
     <lastmod>2021-12-31</lastmod>
     
@@ -72,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://www.itaru.xyz/blogs/d8b002a3.html</loc>
+    <loc>https://www.itaru.xyz/blogs/15902c4f.html</loc>
     
     <lastmod>2021-12-31</lastmod>
     
@@ -86,7 +79,7 @@
   </url>
   
   <url>
-    <loc>https://www.itaru.xyz/blogs/15902c4f.html</loc>
+    <loc>https://www.itaru.xyz/blogs/d8b002a3.html</loc>
     
     <lastmod>2021-12-31</lastmod>
     
@@ -94,13 +87,6 @@
   
   <url>
     <loc>https://www.itaru.xyz/blogs/eb0f2435.html</loc>
-    
-    <lastmod>2021-12-31</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.itaru.xyz/blogs/7402d6ca.html</loc>
     
     <lastmod>2021-12-31</lastmod>
     
@@ -128,7 +114,21 @@
   </url>
   
   <url>
+    <loc>https://www.itaru.xyz/blogs/7402d6ca.html</loc>
+    
+    <lastmod>2021-12-31</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.itaru.xyz/blogs/9bec54e6.html</loc>
+    
+    <lastmod>2021-12-31</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.itaru.xyz/blogs/a6dbf255.html</loc>
     
     <lastmod>2021-12-31</lastmod>
     
@@ -179,7 +179,7 @@
 
   <url>
     <loc>https://www.itaru.xyz/</loc>
-    <lastmod>2021-12-31</lastmod>
+    <lastmod>2022-01-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
