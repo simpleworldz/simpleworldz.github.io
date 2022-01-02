@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Valine 无法评论的解决方案</title>
+      <link href="/blogs/28b3acdd.html"/>
+      <url>/blogs/28b3acdd.html</url>
+      
+        <content type="html"><![CDATA[<p>本站使用的是 LeanCloud 国际版的开发版，hexo 主题是 butterfly。配置详情请见：<a href="/blogs/bfcce7e4.html" title="配置评论插件Valine的邮件提醒和后台管理系统Valine Admin">配置评论插件Valine的邮件提醒和后台管理系统Valine Admin</a>。</p><h3 id="问题原因和解决方案"><a href="#问题原因和解决方案" class="headerlink" title="问题原因和解决方案"></a>问题原因和解决方案</h3><ol><li>问题原因：LeanCloud 存储服务数据已归档。<ul><li>解决方案：登录 LeanCloud，点击激活。</li></ul></li><li>问题原因：请求的域名不正确。<ul><li>解决方法：主题配置文件的 valine 项<a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">填上 serverURLs</a>。</li></ul></li></ol><h3 id="LeanCloud-存储服务数据已归档"><a href="#LeanCloud-存储服务数据已归档" class="headerlink" title="LeanCloud 存储服务数据已归档"></a>LeanCloud 存储服务数据已归档</h3><p>30天没有访问，LeanCloud 会为你的数据做归档处理以节省服务器资源，<a href="https://www.tangruiping.com/post/hexo-valine-admin.html#:~:text=%E6%89%93%E5%BC%80LeanCloud%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B8%BB%E9%A1%B5%E6%BF%80%E6%B4%BB%E5%8D%B3%E5%8F%AF">打开 LeanCloud 控制台主页激活即可</a>。</p><h3 id="请求的域名不正确"><a href="#请求的域名不正确" class="headerlink" title="请求的域名不正确"></a>请求的域名不正确</h3><p>我此次遇到的问题，报错是：</p><p><code>https://us.leancloud.cn/1.1/classes/Comment?where=%7B%22%24or%22%3A%5B%7B%22rid%22%3A%7B%22%24exists%22%3Afalse%7D%7D%2C%7B%22rid%22%3A%22%22%7D%5D%2C%22url%22%3A%22%2Fcomments%2F%22%7D&amp;order=-createdAt%2C-insertedAt&amp;limit=0&amp;count=1</code> <mark class="hl-label red">Failed to load resource: net::ERR_NAME_NOT_RESOLVED</mark> </p><p>错在这个 <code>https://us.leancloud.cn</code> 域名不正确。</p><p>butterfly 有两个文件对 leancloud 进行请求</p><ul><li><a href="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js">https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js</a></li></ul><p><img src="https://ih.itaru.xyz/images/20220102082309.png" alt="20220102082309"></p><p>这个文件默认请求的域名是 <code>https://r+leancloud.cn</code></p><ul><li>themes\butterfly\layout\includes\third-party\newest-comments\valine.pug</li></ul><p><img src="https://ih.itaru.xyz/images/20220102082850.png" alt="20220102082850"></p><p>这个文件默认请求的域名是  <code>https://$&#123;theme.valine.appId.substring(0,8)&#125;.api.lncldglobal.com</code></p><pre><code>valine.pug 请求的域名是正确的，但是却走了 Valine.min.js 的请求。</code></pre><h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p><code>我们可以在主题配置文件的 valine 项的 serverURLs 填上，https:// + appId的前8个字符 + .api.lncldglobal.com。</code></p><p>这个其实就是 leancloud 为我们提供的 REST API 服务器地址。</p><p><img src="https://ih.itaru.xyz/images/20220102083805.png" alt="20220102083805"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客搭建 </category>
+          
+          <category> Valine </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客搭建 </tag>
+            
+            <tag> Valine </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>动漫资源汇总</title>
       <link href="/blogs/9bec54e6.html"/>
       <url>/blogs/9bec54e6.html</url>
@@ -33,14 +62,14 @@
       <link href="/blogs/32ead7ca.html"/>
       <url>/blogs/32ead7ca.html</url>
       
-        <content type="html"><![CDATA[<blockquote><p>得开启<a href="https://butterfly.js.org/posts/ceeb73f/#%E9%A0%81%E9%9D%A2%E7%BE%8E%E5%8C%96">頁面美化</a></p></blockquote><p>参考文章：<a href="https://whatsid.me/2019/08/21/hexo-markdown-syntax/">Hexo博客的Markdown语法</a><br><a href="https://butterfly.js.org/posts/4aa8abbe/">Butterfly 安裝文檔(三) 主題配置-1</a></p><h2 id="美化了的（部分）"><a href="#美化了的（部分）" class="headerlink" title="美化了的（部分）"></a>美化了的（部分）</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># h1   //一级标题 对应 <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span> <span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span></span><br><span class="line"><span class="section">## h2   //二级标题 对应 <span class="xml"><span class="tag">&lt;<span class="name">h2</span>&gt;</span></span> <span class="xml"><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span></span><br><span class="line"><span class="section">### h3  //三级标题 对应 <span class="xml"><span class="tag">&lt;<span class="name">h3</span>&gt;</span></span> <span class="xml"><span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span></span></span><br><span class="line"><span class="section">#### h4  //四级标题 对应 <span class="xml"><span class="tag">&lt;<span class="name">h4</span>&gt;</span></span> <span class="xml"><span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span></span></span><br><span class="line"><span class="section">##### h5  //五级标题 对应 <span class="xml"><span class="tag">&lt;<span class="name">h5</span>&gt;</span></span> <span class="xml"><span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span></span></span><br><span class="line"><span class="section">###### h6  //六级标题 对应 <span class="xml"><span class="tag">&lt;<span class="name">h6</span>&gt;</span></span> <span class="xml"><span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span></span></span><br></pre></td></tr></table></figure><h1 id="h1"><a href="#h1" class="headerlink" title="h1"></a>h1</h1><h2 id="h2"><a href="#h2" class="headerlink" title="h2"></a>h2</h2><h3 id="h3"><a href="#h3" class="headerlink" title="h3"></a>h3</h3><h4 id="h4"><a href="#h4" class="headerlink" title="h4"></a>h4</h4><h5 id="h5"><a href="#h5" class="headerlink" title="h5"></a>h5</h5><h6 id="h6"><a href="#h6" class="headerlink" title="h6"></a>h6</h6><h3 id="段落及区块引用"><a href="#段落及区块引用" class="headerlink" title="段落及区块引用"></a>段落及区块引用</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; 这段文字将会被高亮显示</span></span><br></pre></td></tr></table></figure><blockquote><p>这段文字将会被高亮显示</p></blockquote><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> 无序列表1 // <span class="emphasis">* 和 + 也行</span></span><br><span class="line"><span class="emphasis">- 无序列表2</span></span><br><span class="line"><span class="emphasis">- 无序列表3</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis">1. 有序列表1</span></span><br><span class="line"><span class="emphasis">2. 有序列表2</span></span><br><span class="line"><span class="emphasis">3. 有序列表3</span></span><br></pre></td></tr></table></figure><ul><li>无序列表1</li><li>无序列表2</li><li>无序列表3</li></ul><ol><li>有序列表1</li><li>有序列表2</li><li>有序列表3</li></ol><h3 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--- //或 ***</span><br></pre></td></tr></table></figure><hr><h3 id="嵌套引用"><a href="#嵌套引用" class="headerlink" title="嵌套引用"></a>嵌套引用</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; 动物</span></span><br><span class="line">&gt;&gt; 水生动物</span><br><span class="line">&gt;&gt; 陆生动物</span><br><span class="line">&gt;&gt;&gt; 猴子</span><br><span class="line">&gt;&gt;&gt; 人</span><br><span class="line">&gt;&gt;&gt;&gt; 程序猿</span><br><span class="line">&gt;&gt;&gt;&gt; 攻城狮</span><br><span class="line">&gt;&gt;产品狗 //这里需要注意，没有空行间隔，忽略降级引用标记</span><br><span class="line">射鸡虱   //这里需要注意，没有空行间隔，忽略降级引用标记</span><br><span class="line"></span><br><span class="line">&gt;&gt; 两栖类动物</span><br><span class="line">&gt;&gt;&gt; 大鳄鱼</span><br><span class="line">唐老鸭</span><br></pre></td></tr></table></figure><blockquote><p>动物</p><blockquote><p>水生动物<br>陆生动物</p><blockquote><p>猴子<br>人</p><blockquote><p>程序猿<br>攻城狮<br>产品狗 //这里需要注意，没有空行间隔，忽略降级引用标记<br>射鸡虱   //这里需要注意，没有空行间隔，忽略降级引用标记</p></blockquote></blockquote></blockquote></blockquote><blockquote><blockquote><p>两栖类动物</p><blockquote><p>大鳄鱼<br>唐老鸭</p></blockquote></blockquote></blockquote><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote 作者, 出处 %&#125;</span><br><span class="line">xxxxxxxxxxxxxxxxxxxxxxxxxxxx</span><br><span class="line">&#123;% endblockquote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% blockquote @作者 网络地址 %&#125;</span><br><span class="line">xxxxxxxxxxxxxxxxxxxxxxxxxx</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure><blockquote><p>xxxxxxxxxxxxxxxxxxxxxxxxxxxx</p><footer><strong>作者</strong><cite>出处</cite></footer></blockquote><blockquote><p>xxxxxxxxxxxxxxxxxxxxxxxxxx</p><footer><strong>@作者 网络地址</strong></footer></blockquote><h3 id="lable标签"><a href="#lable标签" class="headerlink" title="lable标签"></a>lable标签</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">臣亮言：&#123;% label 先帝 %&#125;創業未半，而&#123;% label 中道崩殂 blue %&#125;。今天下三分，&#123;% label 益州疲敝 pink %&#125;，此誠&#123;% label 危急存亡之秋 red %&#125;也！然侍衞之臣，不懈於內；&#123;% label 忠志之士 purple %&#125;，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開張聖聽，以光先帝遺德，恢弘志士之氣；不宜妄自菲薄，引喻失義，以塞忠諫之路也。</span><br><span class="line">宮中、府中，俱為一體；陟罰臧否，不宜異同。若有&#123;% label 作奸 orange %&#125;、&#123;% label 犯科 green %&#125;，及為忠善者，宜付有司，論其刑賞，以昭陛下平明之治；不宜偏私，使內外異法也。</span><br></pre></td></tr></table></figure><p>臣亮言：<mark class="hl-label default">先帝</mark> 創業未半，而<mark class="hl-label blue">中道崩殂</mark> 。今天下三分，<mark class="hl-label pink">益州疲敝</mark> ，此誠<mark class="hl-label red">危急存亡之秋</mark> 也！然侍衞之臣，不懈於內；<mark class="hl-label purple">忠志之士</mark> ，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開張聖聽，以光先帝遺德，恢弘志士之氣；不宜妄自菲薄，引喻失義，以塞忠諫之路也。<br>宮中、府中，俱為一體；陟罰臧否，不宜異同。若有<mark class="hl-label orange">作奸</mark> 、<mark class="hl-label green">犯科</mark> ，及為忠善者，宜付有司，論其刑賞，以昭陛下平明之治；不宜偏私，使內外異法也。</p><h2 id="解析错误的"><a href="#解析错误的" class="headerlink" title="解析错误的"></a>解析错误的</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> [ ] content </span><br><span class="line"><span class="bullet">-</span> [x] content</span><br></pre></td></tr></table></figure><ul><li><input disabled="" type="checkbox"> content </li><li><input checked="" disabled="" type="checkbox"> content</li></ul><h2 id="未改变的"><a href="#未改变的" class="headerlink" title="未改变的"></a>未改变的</h2><h3 id="内容强调"><a href="#内容强调" class="headerlink" title="内容强调"></a>内容强调</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="emphasis">*这里是斜体*</span></span><br><span class="line"><span class="emphasis">_这里是斜体_</span></span><br><span class="line"></span><br><span class="line"><span class="strong">**这里是加粗**</span></span><br><span class="line"><span class="strong">__这里是加粗__</span></span><br><span class="line"></span><br><span class="line"><span class="strong">**<span class="emphasis">*这里是加粗并斜体<span class="strong">**<span class="emphasis">*</span></span></span></span></span><br><span class="line"><span class="emphasis"><span class="strong"><span class="emphasis"><span class="strong"><span class="strong">__<span class="emphasis">_这里是加粗并斜体<span class="strong">__<span class="emphasis">_</span></span></span></span></span></span></span></span></span><br></pre></td></tr></table></figure><p><em>这里是斜体</em><br><em>这里是斜体</em></p><p><strong>这里是加粗</strong><br><strong>这里是加粗</strong></p><p><em><strong>这里是加粗并斜体</strong></em><br><em><strong>这里是加粗并斜体</strong></em></p><h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h3><p>这样来<del>删除一段文本</del></p><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| 左对齐    |  右对齐 | 居中 |</span><br><span class="line">| :-------- | -------:| :--: |</span><br><span class="line">| Computer  | 5000 元 |  1台 |</span><br><span class="line">| Phone     | 1999 元 |  1部 |</span><br></pre></td></tr></table></figure><table><thead><tr><th align="left">左对齐</th><th align="right">右对齐</th><th align="center">居中</th></tr></thead><tbody><tr><td align="left">Computer</td><td align="right">5000 元</td><td align="center">1台</td></tr><tr><td align="left">Phone</td><td align="right">1999 元</td><td align="center">1部</td></tr></tbody></table><h3 id="tab-标签"><a href="#tab-标签" class="headerlink" title="tab 标签"></a>tab 标签</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;% tabs Tab标签列表 %&#125;</span><br><span class="line">  &lt;!-- tab 标签页1 --&gt;</span><br><span class="line"><span class="code">    标签页1文本内容</span></span><br><span class="line"><span class="code">  &lt;!-- endtab --&gt;</span></span><br><span class="line"><span class="code">  &lt;!-- tab 标签页2 --&gt;</span></span><br><span class="line"><span class="code">    标签页2文本内容</span></span><br><span class="line"><span class="code">  &lt;!-- endtab --&gt;</span></span><br><span class="line"><span class="code">  &lt;!-- tab 标签页3 --&gt;</span></span><br><span class="line"><span class="code">    标签页3文本内容</span></span><br><span class="line"><span class="code">  &lt;!-- endtab --&gt;</span></span><br><span class="line"><span class="code">&#123;% endtabs %&#125;</span></span><br></pre></td></tr></table></figure><div class="tabs" id="tab标签列表"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#tab标签列表-1">标签页1</button></li><li class="tab"><button type="button" data-href="#tab标签列表-2">标签页2</button></li><li class="tab"><button type="button" data-href="#tab标签列表-3">标签页3</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="tab标签列表-1"><p>  标签页1文本内容</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="tab标签列表-2"><p>  标签页2文本内容</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="tab标签列表-3"><p>  标签页3文本内容</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>得开启<a href="https://butterfly.js.org/posts/ceeb73f/#%E9%A0%81%E9%9D%A2%E7%BE%8E%E5%8C%96">頁面美化</a></p></blockquote><p>参考文章：<a href="https://whatsid.me/2019/08/21/hexo-markdown-syntax/">Hexo博客的Markdown语法</a><br><a href="https://butterfly.js.org/posts/4aa8abbe/">Butterfly 安裝文檔(三) 主題配置-1</a></p><h2 id="美化了的（部分）"><a href="#美化了的（部分）" class="headerlink" title="美化了的（部分）"></a>美化了的（部分）</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># h1   //一级标题 对应 <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span> <span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span></span><br><span class="line"><span class="section">## h2   //二级标题 对应 <span class="xml"><span class="tag">&lt;<span class="name">h2</span>&gt;</span></span> <span class="xml"><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span></span><br><span class="line"><span class="section">### h3  //三级标题 对应 <span class="xml"><span class="tag">&lt;<span class="name">h3</span>&gt;</span></span> <span class="xml"><span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span></span></span><br><span class="line"><span class="section">#### h4  //四级标题 对应 <span class="xml"><span class="tag">&lt;<span class="name">h4</span>&gt;</span></span> <span class="xml"><span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span></span></span><br><span class="line"><span class="section">##### h5  //五级标题 对应 <span class="xml"><span class="tag">&lt;<span class="name">h5</span>&gt;</span></span> <span class="xml"><span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span></span></span><br><span class="line"><span class="section">###### h6  //六级标题 对应 <span class="xml"><span class="tag">&lt;<span class="name">h6</span>&gt;</span></span> <span class="xml"><span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span></span></span><br></pre></td></tr></table></figure><h1 id="h1"><a href="#h1" class="headerlink" title="h1"></a>h1</h1><h2 id="h2"><a href="#h2" class="headerlink" title="h2"></a>h2</h2><h3 id="h3"><a href="#h3" class="headerlink" title="h3"></a>h3</h3><h4 id="h4"><a href="#h4" class="headerlink" title="h4"></a>h4</h4><h5 id="h5"><a href="#h5" class="headerlink" title="h5"></a>h5</h5><h6 id="h6"><a href="#h6" class="headerlink" title="h6"></a>h6</h6><h3 id="段落及区块引用"><a href="#段落及区块引用" class="headerlink" title="段落及区块引用"></a>段落及区块引用</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; 这段文字将会被高亮显示</span></span><br></pre></td></tr></table></figure><blockquote><p>这段文字将会被高亮显示</p></blockquote><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> 无序列表1 // <span class="emphasis">* 和 + 也行</span></span><br><span class="line"><span class="emphasis">- 无序列表2</span></span><br><span class="line"><span class="emphasis">- 无序列表3</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis">1. 有序列表1</span></span><br><span class="line"><span class="emphasis">2. 有序列表2</span></span><br><span class="line"><span class="emphasis">3. 有序列表3</span></span><br></pre></td></tr></table></figure><ul><li>无序列表1</li><li>无序列表2</li><li>无序列表3</li></ul><ol><li>有序列表1</li><li>有序列表2</li><li>有序列表3</li></ol><h3 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--- //或 ***</span><br></pre></td></tr></table></figure><hr><h3 id="嵌套引用"><a href="#嵌套引用" class="headerlink" title="嵌套引用"></a>嵌套引用</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; 动物</span></span><br><span class="line">&gt;&gt; 水生动物</span><br><span class="line">&gt;&gt; 陆生动物</span><br><span class="line">&gt;&gt;&gt; 猴子</span><br><span class="line">&gt;&gt;&gt; 人</span><br><span class="line">&gt;&gt;&gt;&gt; 程序猿</span><br><span class="line">&gt;&gt;&gt;&gt; 攻城狮</span><br><span class="line">&gt;&gt;产品狗 //这里需要注意，没有空行间隔，忽略降级引用标记</span><br><span class="line">射鸡虱   //这里需要注意，没有空行间隔，忽略降级引用标记</span><br><span class="line"></span><br><span class="line">&gt;&gt; 两栖类动物</span><br><span class="line">&gt;&gt;&gt; 大鳄鱼</span><br><span class="line">唐老鸭</span><br></pre></td></tr></table></figure><blockquote><p>动物</p><blockquote><p>水生动物<br>陆生动物</p><blockquote><p>猴子<br>人</p><blockquote><p>程序猿<br>攻城狮<br>产品狗 //这里需要注意，没有空行间隔，忽略降级引用标记<br>射鸡虱   //这里需要注意，没有空行间隔，忽略降级引用标记</p></blockquote></blockquote></blockquote></blockquote><blockquote><blockquote><p>两栖类动物</p><blockquote><p>大鳄鱼<br>唐老鸭</p></blockquote></blockquote></blockquote><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote 作者, 出处 %&#125;</span><br><span class="line">xxxxxxxxxxxxxxxxxxxxxxxxxxxx</span><br><span class="line">&#123;% endblockquote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% blockquote @作者 网络地址 %&#125;</span><br><span class="line">xxxxxxxxxxxxxxxxxxxxxxxxxx</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure><blockquote><p>xxxxxxxxxxxxxxxxxxxxxxxxxxxx</p><footer><strong>作者</strong><cite>出处</cite></footer></blockquote><blockquote><p>xxxxxxxxxxxxxxxxxxxxxxxxxx</p><footer><strong>@作者 网络地址</strong></footer></blockquote><h3 id="lable标签"><a href="#lable标签" class="headerlink" title="lable标签"></a>lable标签</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">臣亮言：&#123;% label 先帝 %&#125;創業未半，而&#123;% label 中道崩殂 blue %&#125;。今天下三分，&#123;% label 益州疲敝 pink %&#125;，此誠&#123;% label 危急存亡之秋 red %&#125;也！然侍衞之臣，不懈於內；&#123;% label 忠志之士 purple %&#125;，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開張聖聽，以光先帝遺德，恢弘志士之氣；不宜妄自菲薄，引喻失義，以塞忠諫之路也。</span><br><span class="line">宮中、府中，俱為一體；陟罰臧否，不宜異同。若有&#123;% label 作奸 orange %&#125;、&#123;% label 犯科 green %&#125;，及為忠善者，宜付有司，論其刑賞，以昭陛下平明之治；不宜偏私，使內外異法也。</span><br></pre></td></tr></table></figure><p>臣亮言：<mark class="hl-label default">先帝</mark> 創業未半，而<mark class="hl-label blue">中道崩殂</mark> 。今天下三分，<mark class="hl-label pink">益州疲敝</mark> ，此誠<mark class="hl-label red">危急存亡之秋</mark> 也！然侍衞之臣，不懈於內；<mark class="hl-label purple">忠志之士</mark> ，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開張聖聽，以光先帝遺德，恢弘志士之氣；不宜妄自菲薄，引喻失義，以塞忠諫之路也。<br>宮中、府中，俱為一體；陟罰臧否，不宜異同。若有<mark class="hl-label orange">作奸</mark> 、<mark class="hl-label green">犯科</mark> ，及為忠善者，宜付有司，論其刑賞，以昭陛下平明之治；不宜偏私，使內外異法也。</p><h3 id="双-Tab"><a href="#双-Tab" class="headerlink" title="双 Tab"></a>双 Tab</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">两个 Tab 键</span><br></pre></td></tr></table></figure><pre><code>两个 Tab 键</code></pre><h2 id="解析错误的"><a href="#解析错误的" class="headerlink" title="解析错误的"></a>解析错误的</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> [ ] content </span><br><span class="line"><span class="bullet">-</span> [x] content</span><br></pre></td></tr></table></figure><ul><li><input disabled="" type="checkbox"> content </li><li><input checked="" disabled="" type="checkbox"> content</li></ul><h2 id="未改变的"><a href="#未改变的" class="headerlink" title="未改变的"></a>未改变的</h2><h3 id="内容强调"><a href="#内容强调" class="headerlink" title="内容强调"></a>内容强调</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="emphasis">*这里是斜体*</span></span><br><span class="line"><span class="emphasis">_这里是斜体_</span></span><br><span class="line"></span><br><span class="line"><span class="strong">**这里是加粗**</span></span><br><span class="line"><span class="strong">__这里是加粗__</span></span><br><span class="line"></span><br><span class="line"><span class="strong">**<span class="emphasis">*这里是加粗并斜体<span class="strong">**<span class="emphasis">*</span></span></span></span></span><br><span class="line"><span class="emphasis"><span class="strong"><span class="emphasis"><span class="strong"><span class="strong">__<span class="emphasis">_这里是加粗并斜体<span class="strong">__<span class="emphasis">_</span></span></span></span></span></span></span></span></span><br></pre></td></tr></table></figure><p><em>这里是斜体</em><br><em>这里是斜体</em></p><p><strong>这里是加粗</strong><br><strong>这里是加粗</strong></p><p><em><strong>这里是加粗并斜体</strong></em><br><em><strong>这里是加粗并斜体</strong></em></p><h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h3><p>这样来<del>删除一段文本</del></p><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| 左对齐    |  右对齐 | 居中 |</span><br><span class="line">| :-------- | -------:| :--: |</span><br><span class="line">| Computer  | 5000 元 |  1台 |</span><br><span class="line">| Phone     | 1999 元 |  1部 |</span><br></pre></td></tr></table></figure><table><thead><tr><th align="left">左对齐</th><th align="right">右对齐</th><th align="center">居中</th></tr></thead><tbody><tr><td align="left">Computer</td><td align="right">5000 元</td><td align="center">1台</td></tr><tr><td align="left">Phone</td><td align="right">1999 元</td><td align="center">1部</td></tr></tbody></table><h3 id="tab-标签"><a href="#tab-标签" class="headerlink" title="tab 标签"></a>tab 标签</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;% tabs Tab标签列表 %&#125;</span><br><span class="line">  &lt;!-- tab 标签页1 --&gt;</span><br><span class="line"><span class="code">    标签页1文本内容</span></span><br><span class="line"><span class="code">  &lt;!-- endtab --&gt;</span></span><br><span class="line"><span class="code">  &lt;!-- tab 标签页2 --&gt;</span></span><br><span class="line"><span class="code">    标签页2文本内容</span></span><br><span class="line"><span class="code">  &lt;!-- endtab --&gt;</span></span><br><span class="line"><span class="code">  &lt;!-- tab 标签页3 --&gt;</span></span><br><span class="line"><span class="code">    标签页3文本内容</span></span><br><span class="line"><span class="code">  &lt;!-- endtab --&gt;</span></span><br><span class="line"><span class="code">&#123;% endtabs %&#125;</span></span><br></pre></td></tr></table></figure><div class="tabs" id="tab标签列表"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#tab标签列表-1">标签页1</button></li><li class="tab"><button type="button" data-href="#tab标签列表-2">标签页2</button></li><li class="tab"><button type="button" data-href="#tab标签列表-3">标签页3</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="tab标签列表-1"><p>  标签页1文本内容</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="tab标签列表-2"><p>  标签页2文本内容</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="tab标签列表-3"><p>  标签页3文本内容</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>]]></content>
       
       
       <categories>
           
-          <category> 教程 </category>
-          
           <category> 博客搭建 </category>
+          
+          <category> butterfly </category>
           
       </categories>
       
@@ -49,7 +78,7 @@
             
             <tag> 博客搭建 </tag>
             
-            <tag> hexo </tag>
+            <tag> butterfly </tag>
             
         </tags>
       
@@ -328,7 +357,7 @@
           
           <category> 问题排除 </category>
           
-          <category> 写博客 </category>
+          <category> 博客 </category>
           
       </categories>
       
@@ -337,7 +366,7 @@
             
             <tag> 问题排除 </tag>
             
-            <tag> 写博客 </tag>
+            <tag> 博客 </tag>
             
         </tags>
       
@@ -413,11 +442,9 @@
       
       <categories>
           
-          <category> 教程 </category>
-          
           <category> 博客搭建 </category>
           
-          <category> hexo </category>
+          <category> Valine </category>
           
       </categories>
       
@@ -426,7 +453,7 @@
             
             <tag> 博客搭建 </tag>
             
-            <tag> hexo </tag>
+            <tag> Valine </tag>
             
         </tags>
       
@@ -444,11 +471,9 @@
       
       <categories>
           
-          <category> 教程 </category>
-          
           <category> 博客搭建 </category>
           
-          <category> hexo </category>
+          <category> 优化 </category>
           
       </categories>
       
@@ -457,7 +482,7 @@
             
             <tag> 博客搭建 </tag>
             
-            <tag> hexo </tag>
+            <tag> 优化 </tag>
             
         </tags>
       
@@ -475,11 +500,9 @@
       
       <categories>
           
-          <category> 教程 </category>
-          
           <category> 博客搭建 </category>
           
-          <category> hexo </category>
+          <category> 优化 </category>
           
       </categories>
       
@@ -488,7 +511,7 @@
             
             <tag> 博客搭建 </tag>
             
-            <tag> hexo </tag>
+            <tag> 优化 </tag>
             
         </tags>
       
@@ -506,9 +529,9 @@
       
       <categories>
           
-          <category> 教程 </category>
-          
           <category> 博客搭建 </category>
+          
+          <category> 域名 </category>
           
       </categories>
       
@@ -517,7 +540,7 @@
             
             <tag> 博客搭建 </tag>
             
-            <tag> hexo </tag>
+            <tag> 域名 </tag>
             
         </tags>
       
@@ -534,8 +557,6 @@
       
       
       <categories>
-          
-          <category> 教程 </category>
           
           <category> 博客搭建 </category>
           
