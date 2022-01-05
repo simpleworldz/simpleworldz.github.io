@@ -4,7 +4,7 @@
   <url>
     <loc>https://www.itaru.xyz/blogs/cd7c564f.html</loc>
     
-    <lastmod>2022-01-04</lastmod>
+    <lastmod>2022-01-05</lastmod>
     
   </url>
   
@@ -107,6 +107,13 @@
   </url>
   
   <url>
+    <loc>https://www.itaru.xyz/blogs/6b4f6d08.html</loc>
+    
+    <lastmod>2021-12-31</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.itaru.xyz/blogs/15902c4f.html</loc>
     
     <lastmod>2021-12-31</lastmod>
@@ -115,13 +122,6 @@
   
   <url>
     <loc>https://www.itaru.xyz/blogs/d8b002a3.html</loc>
-    
-    <lastmod>2021-12-31</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.itaru.xyz/blogs/6b4f6d08.html</loc>
     
     <lastmod>2021-12-31</lastmod>
     
@@ -200,7 +200,7 @@
 
   <url>
     <loc>https://www.itaru.xyz/</loc>
-    <lastmod>2022-01-04</lastmod>
+    <lastmod>2022-01-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
