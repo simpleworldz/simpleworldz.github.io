@@ -1,9 +1,9 @@
 User-agent: *
 Allow: /
 Allow: /blogs/
-Disallow: /js/
-Disallow: /css/
-Disallow: /fonts/
+Allow: /js/
+Allow: /css/
+Allow: /fonts/
 Disallow: /archives/
 Disallow: /tags/
 Disallow: /categories/
