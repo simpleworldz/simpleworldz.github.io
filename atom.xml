@@ -6,7 +6,7 @@
   <link href="https://www.itaru.xyz/atom.xml" rel="self"/>
   
   <link href="https://www.itaru.xyz/"/>
-  <updated>2022-01-15T15:57:38.040Z</updated>
+  <updated>2022-01-17T14:00:14.500Z</updated>
   <id>https://www.itaru.xyz/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>EF Basics 学习笔记</title>
+    <link href="https://www.itaru.xyz/blogs/d23db665.html"/>
+    <id>https://www.itaru.xyz/blogs/d23db665.html</id>
+    <published>2022-01-16T13:52:50.000Z</published>
+    <updated>2022-01-17T14:00:14.500Z</updated>
+    
+    <content type="html"><![CDATA[<p>教程网址：<a href="https://www.entityframeworktutorial.net/what-is-entityframework.aspx">EntityFrameworkTutorial - EF Basics</a></p><p>Entity Framework 是一个对象关系映射器 (O/RM)，它使 .NET 开发人员能够使用 .NET 对象处理数据库。它消除了开发人员通常需要编写的大多数数据访问代码的问题。</p><h3 id="EF-如何工作"><a href="#EF-如何工作" class="headerlink" title="EF 如何工作"></a>EF 如何工作</h3><p>EF API（EF6 和 EF Core）包括将领域（实体）类（domain (entity) classes）映射到数据库架构、将 LINQ 查询转换成 SQL 并执行、跟踪实体在其生命周期内发生的更改以及将更改保存到数据库的能力。</p><p>EDM（Entity Data Model）是整个元数据的内存表示：概念模型、存储模型以及它们之间的映射。</p><h3 id="EF-的架构"><a href="#EF-的架构" class="headerlink" title="EF 的架构"></a><a href="https://www.entityframeworktutorial.net/EntityFramework-Architecture.aspx">EF 的架构</a></h3><p><img src="https://ih.itaru.xyz/images/20220113185746.png" alt="20220113185746"></p><h3 id="EF-特性"><a href="#EF-特性" class="headerlink" title="EF 特性"></a>EF 特性</h3><ul><li>EF 创建基于POCO（Plain Old CLR Object）实体的 EDM。</li><li>EF 在查询或保存数据时执行自动事务管理。它还提供了自定义事务管理的选项。</li><li>EF 包括开箱即用的第一级缓存。因此，<code>重复查询将从缓存中返回数据，而不是访问数据库</code>。</li></ul><h4 id="EF-默认采用乐观并发"><a href="#EF-默认采用乐观并发" class="headerlink" title="EF 默认采用乐观并发"></a>EF 默认采用乐观并发</h4><p><a href="https://docs.microsoft.com/en-us/sql/odbc/reference/develop-app/optimistic-concurrency?view=sql-server-ver15">Optimistic Concurrency</a> 乐观并发的名称源于乐观假设，即事务之间很少发生冲突。当另一个事务在当前事务<code>读取</code>和<code>更新或删除</code>的时间之间更新或删除一行数据时，就说发生了冲突。它与悲观并发或锁定相反，此时应用程序开发人员认为这种冲突是司空见惯的。</p><h3 id="EF-的三种实现方式"><a href="#EF-的三种实现方式" class="headerlink" title="EF 的三种实现方式"></a><a href="https://www.entityframeworktutorial.net/choosing-development-approach-with-entity-framework.aspx">EF 的三种实现方式</a></h3><ol><li>Database-First （EF Core 有限支持）</li><li>Code-First</li><li>Model-First （F Core 不支持）</li></ol><h3 id="EF-中的持久性"><a href="#EF-中的持久性" class="headerlink" title="EF 中的持久性"></a><a href="https://www.entityframeworktutorial.net/EntityFramework4.3/persistence-in-entity-framework.aspx">EF 中的持久性</a></h3><ol><li>连接模式（Connected Scenario）<br>在连接模式中，相同的上下文类实例（从 DbContext 派生的 XXXContext）用于检索和保存实体。它在其生命周期内跟踪所有实体。  </li><li>断开模式（Disconnected Scenario）<br>在断开模式中，上下文的不同实例用于检索实体并将其保存到数据库中。检索数据后释放上下文的一个实例，并创建一个新实例以将实体保存到数据库中</li></ol><h3 id="Context"><a href="#Context" class="headerlink" title="Context"></a>Context</h3><p>Context 类是使用 EF 6 或 EF Core 时最重要的类。它表示与底层数据库的会话，您可以使用它执行 CRUD（创建、读取、更新、删除）操作。</p><p>Context 类用于查询或保存数据到数据库。它还用于配置领域类（domain classes）、与数据库相关的映射、更改跟踪设置、缓存、事务等。</p><h3 id="Entity"><a href="#Entity" class="headerlink" title="Entity"></a>Entity</h3><p>Entity Framework 中的实体是映射到数据库表的类。此类必须作为 DbSet<TEntity> 类型属性包含在 DbContext 类中。 EF API 将每个实体映射到表，将实体的每个属性映射到数据库中的列。</p><p>一个实体可以包括两种类型的属性：<code>标量属性</code>和<code>导航属性</code>。</p><h4 id="Entity-数据模型"><a href="#Entity-数据模型" class="headerlink" title="Entity 数据模型"></a>Entity 数据模型</h4><ol><li>概念模型（Conceptual Model）</li><li>存储模型（Storage Model）</li><li>映射（Mappings）</li></ol><h4 id="Entity-的类型"><a href="#Entity-的类型" class="headerlink" title="Entity 的类型"></a>Entity 的类型</h4><p>实体框架中有两种类型的实体：POCO 实体（POCO Entities (Plain Old CLR Object)）和动态代理实体（Dynamic Proxy Entities (POCO Proxy)）。</p><p>Dynamic Proxy 是一个包装 POCO 实体的运行时代理类。动态代理实体允许<code>延迟加载</code>。POCO 实体应满足以下要求才能成为 POCO 代理（Dynamic Proxy）：</p><ol><li>类为 public，且非 sealed 和 abstract。</li><li>每个导航属性（navigation property）得定义为 public、virtual。</li><li>每个集合属性（collection property）必须是 ICollection<T>。</li><li>ProxyCreationEnabled 不能为 false。</li></ol><p>默认情况下，为每个实体启用动态代理。可以在上下文类中设置 context.Configuration.ProxyCreationEnabled = false 来禁用动态代理。</p><p>在运行时，EF API 将为实体（如  Student）创建一个动态代理实例。Student 的动态代理类型为 System.Data.Entity.DynamicProxies.Student</p><h4 id="Entity-的状态"><a href="#Entity-的状态" class="headerlink" title="Entity 的状态"></a>Entity 的状态</h4><p>EF API 在其生命周期内维护每个实体的状态。</p><ul><li>Added</li><li>Modified</li><li>Deleted</li><li>Unchanged</li><li>Detached</li></ul><p>实体状态从 Unchanged 到 Modified 状态的更改是唯一由上下文自动处理的状态。所有其他更改必须使用 DbContext 或 DbSet 的适当方法显式进行。</p><p>EF API 在调用 context.SaveChanges() 方法时根据实体的状态构建和执行 INSERT、UPDATE 和 DELETE 命令。</p>]]></content>
+    
+    
+    <summary type="html">Entity Framework 是一个对象关系映射器 (O/RM)，它使 .NET 开发人员能够使用 .NET 对象处理数据库。它消除了开发人员通常需要编写的大多数数据访问代码的问题。</summary>
+    
+    
+    
+    <category term="C#" scheme="https://www.itaru.xyz/categories/C/"/>
+    
+    <category term="EF" scheme="https://www.itaru.xyz/categories/C/EF/"/>
+    
+    
+    <category term="C#" scheme="https://www.itaru.xyz/tags/C/"/>
+    
+    <category term="EF" scheme="https://www.itaru.xyz/tags/EF/"/>
+    
+  </entry>
   
   <entry>
     <title>ASP.NET Core 学习笔记</title>
@@ -472,31 +497,6 @@
     <category term="问题排除" scheme="https://www.itaru.xyz/tags/%E9%97%AE%E9%A2%98%E6%8E%92%E9%99%A4/"/>
     
     <category term="耳机" scheme="https://www.itaru.xyz/tags/%E8%80%B3%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何在日亚购买 kindle 电子书</title>
-    <link href="https://www.itaru.xyz/blogs/35c8c95f.html"/>
-    <id>https://www.itaru.xyz/blogs/35c8c95f.html</id>
-    <published>2021-10-28T12:37:44.000Z</published>
-    <updated>2022-01-06T11:47:54.279Z</updated>
-    
-    <content type="html"><![CDATA[<p>由于对版权保护的重视，日文原版书在互联网上特别难找。淘宝上的kindle日亚代购收费也是贵得离谱，我只问了一家晒出来的价格还行的店铺，一本折合人民币27的书，收我50。这亏怎么能吃？一次还好，多次就受不了了。</p><p>说来日亚购买电子书也就几步</p><ul><li>连接日本代理</li><li>注册日亚账号</li><li>填写支付信息</li><li>购买电子书</li></ul><p>详细步骤看这边，<a href="https://www.bilibili.com/read/cv2029800/">如何使用日亚购买电子版杂志</a>。只是有几点需要注意下：</p><h3 id="支付信息"><a href="#支付信息" class="headerlink" title="支付信息"></a>支付信息</h3><h4 id="信用卡"><a href="#信用卡" class="headerlink" title="信用卡"></a>信用卡</h4><p>信用卡支付是日亚支付最通用的方法，以下几种信用卡都行。<br><img src="https://ih.itaru.xyz/images/20211028213001.png" alt="20211028213001"></p><h4 id="中国银行长城跨境通国际借记卡"><a href="#中国银行长城跨境通国际借记卡" class="headerlink" title="中国银行长城跨境通国际借记卡"></a>中国银行长城跨境通国际借记卡</h4><p><code>长城跨境通国际借记卡</code>如其名，是一种借记卡，申请这种卡<a href="https://www.boc.cn/Bcservice/bc2/201704/t20170426_9329829.html#:~:text=%E5%8F%AA%E9%9C%80%E5%87%AD%E6%9C%AC%E4%BA%BA%E6%9C%89%E6%95%88%E8%BA%AB%E4%BB%BD%E8%AF%81%E4%BB%B6">没有申请信用卡的条条框框</a>，适合由于各种原因无法或者不想申请信用卡的同学。我用的就是这种卡，直接去营业厅办理，当场就能领到卡。要注意的是，并不是所有中国银行的营业厅都能办理这种卡，往往城市分行和大学里的支行会有，去之前可以打电话询问下。另外，这卡得绑定一张中国银行的一类卡，如果没有，得一起办理。</p><h4 id="虚拟信用卡"><a href="#虚拟信用卡" class="headerlink" title="虚拟信用卡"></a>虚拟信用卡</h4><p>申请虚拟信用卡的难度会比正常信号用卡低，国内不知道还能不能申请，查了几个银行都没有，<a href="https://zhidao.baidu.com/question/495042755475833292.html">中国银行</a>，<a href="https://zhidao.baidu.com/question/1499884976872396419.html">招商银行</a>。国外的，比如<a href="https://zhuanlan.zhihu.com/p/129760347">Easypay</a>，看评论，各种坑。</p><h4 id="淘宝购买礼品卡"><a href="#淘宝购买礼品卡" class="headerlink" title="淘宝购买礼品卡"></a>淘宝购买礼品卡</h4><p>没有信用卡的同学多数是使用礼品卡支付的吧，但淘宝购买礼品卡存在一定风险。由于经常出现信用卡盗刷的情况，亚马逊对这块管得很严，如果遇到不良淘宝商家，日亚账号可能会被封，钱也不一定能退回来。</p><h3 id="日本代理"><a href="#日本代理" class="headerlink" title="日本代理"></a>日本代理</h3><p>据说代理的<code>伪装度（匿名性）</code>不够也是有被封号的风险的。</p><p>我使用的伪装度检测网站是<a href="https://whoer.net/">whoer</a>，测试了以下两种方法：</p><h4 id="V2ray打开全局代理"><a href="#V2ray打开全局代理" class="headerlink" title="V2ray打开全局代理"></a>V2ray打开全局代理</h4><p><img src="https://ih.itaru.xyz/images/20211029125013.png" alt="20211029125013"><br>将电脑时区改为东京后<br><img src="https://ih.itaru.xyz/images/20211029125043.png" alt="20211029125043"><br>语言没有尝试修改了</p><h4 id="使用AnyConnect-VPN"><a href="#使用AnyConnect-VPN" class="headerlink" title="使用AnyConnect VPN"></a>使用AnyConnect VPN</h4><p>扣了25分，总分为何是90？<br><img src="https://ih.itaru.xyz/images/20211029125459.png" alt="20211029125459"><br>将电脑时区改为东京后，总分100了。<br><img src="https://ih.itaru.xyz/images/20211029125646.png" alt="20211029125646"><br><b>vpn的伪装度比代理高，感觉挺合理的。</b></p><h3 id="将电子书传输到kindle"><a href="#将电子书传输到kindle" class="headerlink" title="将电子书传输到kindle"></a>将电子书传输到kindle</h3><p>电脑上购买好电子书后<code>（第一次购买可以用0元的书做下测试）</code>，kindle切换到日亚账号。如果电子书没有自动下载到kindle，可以将电子书下载到电脑，使用数据线传输到kindle。</p><div class="note warning simple"><p>切换和退出账号，kindle会自动清空所有已下载的电子书。</p></div><p><img src="https://ih.itaru.xyz/images/20211029192901.png" alt="20211029192901"><br><img src="https://ih.itaru.xyz/images/20211029193024.png" alt="20211029193024"></p><h3 id="直接使用kindle购买日亚电子书"><a href="#直接使用kindle购买日亚电子书" class="headerlink" title="直接使用kindle购买日亚电子书"></a>直接使用kindle购买日亚电子书</h3><p>kindle连上日本代理，商城才会是日本区的。可以尝试用以下几种方式让kindle连上代理：</p><ul><li>路由器设置代理</li><li>电脑的热点功能</li><li>手机下载可以分享代理的软件</li></ul><p>路由器得有设置代理的功能才行，或者可以尝试刷机。</p><p>电脑的热点功能，我试了v2ray全局代理+热点，kindle并没有连接代理；而连anyconnect后，电脑就开不了热点了。</p><p>手机可以去Google Play商店去下载一款叫<code>VPN 热点</code>的app，这个我试过，可以让其他设备也连上代理，但需要root权限。我现在手机没有root功能，所以就没有尝试使用kindle连接了。</p><p>其实我没有成功的直接使用kindle购买日亚电子书，毕竟可以用电脑购买，没有下功夫解决这个需求的动力。</p>]]></content>
-    
-    
-    <summary type="html">由于对版权保护的重视，日文原版书在互联网上特别难找。本文讲述如何在日亚购买 Kindle 电子书：连接日本代理、注册日亚账号、填写支付信息、购买电子书。</summary>
-    
-    
-    
-    <category term="教程" scheme="https://www.itaru.xyz/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    <category term="kindle" scheme="https://www.itaru.xyz/categories/%E6%95%99%E7%A8%8B/kindle/"/>
-    
-    
-    <category term="kindle" scheme="https://www.itaru.xyz/tags/kindle/"/>
-    
-    <category term="日亚" scheme="https://www.itaru.xyz/tags/%E6%97%A5%E4%BA%9A/"/>
     
   </entry>
   
