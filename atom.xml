@@ -6,7 +6,7 @@
   <link href="https://www.itaru.xyz/atom.xml" rel="self"/>
   
   <link href="https://www.itaru.xyz/"/>
-  <updated>2022-01-21T14:24:36.620Z</updated>
+  <updated>2022-01-28T14:25:37.889Z</updated>
   <id>https://www.itaru.xyz/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PicGo 上传失败 服务端出错 请重试</title>
+    <link href="https://www.itaru.xyz/blogs/ede6a05e.html"/>
+    <id>https://www.itaru.xyz/blogs/ede6a05e.html</id>
+    <published>2022-01-28T14:21:57.000Z</published>
+    <updated>2022-01-28T14:25:37.889Z</updated>
+    
+    <content type="html"><![CDATA[<p>我使用的是 vscode + PicGo插件 + GitHub。</p><p>如果是原先使用得好好的，某一刻开始，怎么重试都报错。那可能是 token 过期了。</p><p>去 <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a> 检查下，如果过期了可以重新<a href="https://picgo.github.io/PicGo-Doc/zh/guide/config.html#github%E5%9B%BE%E5%BA%8A">设置一个</a>。</p><hr><p>吐槽：</p><p>就离谱，一页 10 条，有 8 条是一样的。</p><p><img src="https://ih.itaru.xyz/images/20220128221150.png" alt="20220128221150"></p>]]></content>
+    
+    
+    <summary type="html">PicGo 上传时报错：上传失败，服务端出错，请重试！记录下解决方法。</summary>
+    
+    
+    
+    <category term="博客搭建" scheme="https://www.itaru.xyz/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+    <category term="图床" scheme="https://www.itaru.xyz/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%9B%BE%E5%BA%8A/"/>
+    
+    
+    <category term="博客搭建" scheme="https://www.itaru.xyz/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+    <category term="图床" scheme="https://www.itaru.xyz/tags/%E5%9B%BE%E5%BA%8A/"/>
+    
+  </entry>
   
   <entry>
     <title>EF DB-First 学习笔记</title>
@@ -472,31 +497,6 @@
     
     
     <category term="C#" scheme="https://www.itaru.xyz/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>图片上传到博客后被自动拉伸的原因</title>
-    <link href="https://www.itaru.xyz/blogs/eda0a079.html"/>
-    <id>https://www.itaru.xyz/blogs/eda0a079.html</id>
-    <published>2021-11-05T03:42:56.000Z</published>
-    <updated>2022-01-21T02:44:49.521Z</updated>
-    
-    <content type="html"><![CDATA[<p>写上一篇文章的时候遇到一个问题，图片上传到博客后长宽都被自动拉伸到了原先的1.5倍。</p><div class="note info simple"><p>只有部分人的电脑会出现这个问题，这和电脑的设置有关。</p></div><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>使用微信截图工具截一个 300 x 200 的图片。<br>上传到博客后，这图占据的大小成了 450 x 300，但其实图片的像素还是 300 x 200。</p><img src="https://ih.itaru.xyz/images/小电视.png" align='left' /><p><img src="https://ih.itaru.xyz/images/1636119728(1).png" alt="1636119728(1)"><br><b>另外：</b><br>不仅是自己的博客，其他网页也会出现图片占用大小比实际像素多的情况。<br>将图片放入OneNote中，图片也会被放大。<br>用ImageClass或电脑自带的画图软件打开图片，图片则没有被放大。</p><h3 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h3><p><code>显示-&gt;缩放与布局-&gt;更改文本、应用等项目的大小 默认设置为了150%。</code><br><img src="https://ih.itaru.xyz/images/20211105214515.png" alt="20211105214515"><br><b>推荐值和屏幕的大小以及分辨率有关，设置成自己感觉最舒服的值即可，这个值往往就是推荐值。所以这个没必要改，只是知道原因就行。图片也没必要做处理，毕竟每个人的设置可能不一样。</b></p><h3 id="参考网站"><a href="#参考网站" class="headerlink" title="参考网站"></a>参考网站</h3><p><a href="https://www.itechtics.com/resolution-scaling-layout/">How To Optimize resolution, scaling, and layout in Windows 10</a></p>]]></content>
-    
-    
-    <summary type="html">图片上传到博客后长宽都被自动拉伸到了原先的 1.5 倍，其背后的原因是？</summary>
-    
-    
-    
-    <category term="博客搭建" scheme="https://www.itaru.xyz/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-    <category term="美化" scheme="https://www.itaru.xyz/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E7%BE%8E%E5%8C%96/"/>
-    
-    
-    <category term="博客搭建" scheme="https://www.itaru.xyz/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-    <category term="博客美化" scheme="https://www.itaru.xyz/tags/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/"/>
     
   </entry>
   

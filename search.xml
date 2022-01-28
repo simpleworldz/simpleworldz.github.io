@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>PicGo 上传失败 服务端出错 请重试</title>
+      <link href="/blogs/ede6a05e.html"/>
+      <url>/blogs/ede6a05e.html</url>
+      
+        <content type="html"><![CDATA[<p>我使用的是 vscode + PicGo插件 + GitHub。</p><p>如果是原先使用得好好的，某一刻开始，怎么重试都报错。那可能是 token 过期了。</p><p>去 <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a> 检查下，如果过期了可以重新<a href="https://picgo.github.io/PicGo-Doc/zh/guide/config.html#github%E5%9B%BE%E5%BA%8A">设置一个</a>。</p><hr><p>吐槽：</p><p>就离谱，一页 10 条，有 8 条是一样的。</p><p><img src="https://ih.itaru.xyz/images/20220128221150.png" alt="20220128221150"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客搭建 </category>
+          
+          <category> 图床 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客搭建 </tag>
+            
+            <tag> 图床 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>EF DB-First 学习笔记</title>
       <link href="/blogs/db29be24.html"/>
       <url>/blogs/db29be24.html</url>
@@ -695,7 +724,7 @@
           
           <category> 博客搭建 </category>
           
-          <category> 优化 </category>
+          <category> 图床 </category>
           
       </categories>
       
@@ -704,7 +733,7 @@
             
             <tag> 博客搭建 </tag>
             
-            <tag> 博客优化 </tag>
+            <tag> 图床 </tag>
             
         </tags>
       
