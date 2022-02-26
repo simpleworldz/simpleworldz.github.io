@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>hexo 3000 端口被占用</title>
+      <link href="/blogs/17748c8d.html"/>
+      <url>/blogs/17748c8d.html</url>
+      
+        <content type="html"><![CDATA[<p>安装了 Docker Desktop 后的第二天，使用 hexo server（hexo s） 命令报了 <code>Error: listen EACCES: permission denied 0.0.0.0:3000</code> 错误。</p><h3 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h3><p>Docker Desktop 启用了 Hyper-V，而 Hyper-V 会随机保留一些端口备用，导致这些端口被占用。既然是随机的，那么重启电脑是有可能解决问题的。</p><h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//禁用 Hyper-V</span><br><span class="line"><span class="meta">$</span><span class="bash"> dism.exe /Online /Disable-Feature:Microsoft-Hyper-V</span></span><br><span class="line">//添加需要排除的端口范围（startport 开始端口，numberofports 排除的个数）</span><br><span class="line">//以下示例排除 3000 - 3009 10 个端口</span><br><span class="line"><span class="meta">$</span><span class="bash"> netsh int ipv4 add excludedportrange protocol=tcp startport=3000 numberofports=10</span></span><br><span class="line">//重新启用 Hyper-V</span><br><span class="line"><span class="meta">$</span><span class="bash"> dism.exe /Online /Enable-Feature:Microsoft-Hyper-V /All</span></span><br></pre></td></tr></table></figure><div class="note info flat"><p>该方法只是禁止 Hyper-V 占用特定的端口，指不定哪次它占用了其他你需要使用的端口。</p></div><h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><ol><li><a href="https://howiezhao.github.io/2021/06/01/win10-port-is-already-in-use-problem/">Windows 10 中莫名其妙的“端口被占用”问题解决</a></li><li><a href="https://www.manongdao.com/article-2287898.html">Win10 各种端口占用问题的解决办法</a></li><li><a href="https://github.com/docker/for-win/issues/3171">Unable to bind ports: Docker-for-Windows &amp; Hyper-V excluding but not using important port ranges</a></li></ol><p>参考文献 2、3 中有一些其他的解决方案，但我没有测试。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客搭建 </category>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客搭建 </tag>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>深入探讨 async/await</title>
       <link href="/blogs/5910e909.html"/>
       <url>/blogs/5910e909.html</url>
