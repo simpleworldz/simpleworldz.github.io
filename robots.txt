@@ -4,9 +4,9 @@ Allow: /blogs/
 Allow: /js/
 Allow: /css/
 Allow: /fonts/
-Disallow: /archives/
-Disallow: /tags/
-Disallow: /categories/
+Allow: /archives/
+Allow: /tags/
+Allow: /categories/
 Disallow: /link/
 Disallow: /about/
 Disallow: /comments/
