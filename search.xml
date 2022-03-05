@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>MIUI 12.5 安装 Fiddler 证书</title>
+      <link href="/blogs/2e5d65c9.html"/>
+      <url>/blogs/2e5d65c9.html</url>
+      
+        <content type="html"><![CDATA[<p>MIUI 12.5 版本无法自动安装证书，得下载证书后自己手动安装。</p><p>安装步骤为：</p><blockquote><p>设置 -&gt; CA 证书 -&gt; 选择你要安装的证书。</p></blockquote><p><img src="https://ih.itaru.xyz/images/20220305170652.png" alt="20220305170652"><br><img src="https://ih.itaru.xyz/images/20220305170529.png" alt="20220305170529"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Fiddler </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Fiddler </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LeetCode 优秀解决方案 - 202202</title>
       <link href="/blogs/b4dc71b.html"/>
       <url>/blogs/b4dc71b.html</url>
@@ -722,16 +747,12 @@
       
       <categories>
           
-          <category> 问题排除 </category>
-          
           <category> 耳机 </category>
           
       </categories>
       
       
         <tags>
-            
-            <tag> 问题排除 </tag>
             
             <tag> 耳机 </tag>
             

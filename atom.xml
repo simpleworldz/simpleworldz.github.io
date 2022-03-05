@@ -6,7 +6,7 @@
   <link href="https://www.itaru.xyz/atom.xml" rel="self"/>
   
   <link href="https://www.itaru.xyz/"/>
-  <updated>2022-03-05T08:44:09.535Z</updated>
+  <updated>2022-03-05T09:10:28.482Z</updated>
   <id>https://www.itaru.xyz/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MIUI 12.5 安装 Fiddler 证书</title>
+    <link href="https://www.itaru.xyz/blogs/2e5d65c9.html"/>
+    <id>https://www.itaru.xyz/blogs/2e5d65c9.html</id>
+    <published>2022-03-05T09:10:32.000Z</published>
+    <updated>2022-03-05T09:10:28.482Z</updated>
+    
+    <content type="html"><![CDATA[<p>MIUI 12.5 版本无法自动安装证书，得下载证书后自己手动安装。</p><p>安装步骤为：</p><blockquote><p>设置 -&gt; CA 证书 -&gt; 选择你要安装的证书。</p></blockquote><p><img src="https://ih.itaru.xyz/images/20220305170652.png" alt="20220305170652"><br><img src="https://ih.itaru.xyz/images/20220305170529.png" alt="20220305170529"></p>]]></content>
+    
+    
+    <summary type="html">MIUI 12.5 版本无法自动安装证书，得下载证书后自己手动安装。</summary>
+    
+    
+    
+    <category term="Fiddler" scheme="https://www.itaru.xyz/categories/Fiddler/"/>
+    
+    
+    <category term="Fiddler" scheme="https://www.itaru.xyz/tags/Fiddler/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 优秀解决方案 - 202202</title>
@@ -484,27 +505,6 @@
     <category term="C#" scheme="https://www.itaru.xyz/tags/C/"/>
     
     <category term=".NET面试题" scheme="https://www.itaru.xyz/tags/NET%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git/GitHub 实例汇总</title>
-    <link href="https://www.itaru.xyz/blogs/7402d6ca.html"/>
-    <id>https://www.itaru.xyz/blogs/7402d6ca.html</id>
-    <published>2021-12-14T14:12:14.000Z</published>
-    <updated>2022-01-06T13:26:56.744Z</updated>
-    
-    <content type="html"><![CDATA[<p>这是我进行过的一些和 Git/GitHub 有关的值得记录下来的操作。</p><h3 id="GitHub-两种类型的-URL-地址"><a href="#GitHub-两种类型的-URL-地址" class="headerlink" title="GitHub 两种类型的 URL 地址"></a>GitHub 两种类型的 URL 地址</h3><p>以前将更改提交到 GitHub 老是报错：<code>SSL certificate problem: self signed certificate</code></p><p>也有尝试使用 <code>git config --global http.sslVerify false</code></p><p>但过段时间又报相同的错误，而且这个语句时灵时不灵，有时得执行好几次才能提交成功。就跟玄学一样。</p><p>后来发现了根源，<a href="https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories">原来 GitHub 有两种中 Url</a>：</p><ul><li>HTTPS URL 如： <code>https://github.com/user/repo.git</code></li><li>SSH URL 如： <code>git@github.com:user/repo.git</code></li></ul><p>我原先一直使用的是 https 类型的 Url，改为 ssh 类型的后，就没有再报错了。</p><h3 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h3><p>本地有一个 master 分支，GitHub 上有一个 main 分支。将 main 分支合并到 master 中。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git pull //将 main 分支拉到本地。或者用 git fetch</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch -a //查看所有分支</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch //查看当前分支。</span></span><br><span class="line"></span><br><span class="line">//若当前分支不是 master，则切换成 master：</span><br><span class="line"><span class="meta">$</span><span class="bash"> git chechout master</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git merge origin/main //合并分支</span></span><br><span class="line"></span><br><span class="line">//若提示 fatal: refusing to merge unrelated histories。请加上 --allow-unrelated-histories</span><br><span class="line"><span class="meta">$</span><span class="bash"> git merge origin/main --allow-unrelated-histories</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git push //将更改推送至GitHub</span></span><br><span class="line"></span><br><span class="line">//检查更新无误后，删除 main 分支。</span><br><span class="line">//git branch -d origin/main 会报：error: branch &#x27;origin/main&#x27; not found. 因为它是</span><br><span class="line">//删除本地分支的语句</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git push origin --delete main //或者简化的语句 git push origin :main</span></span><br><span class="line">//若报错：! [remote rejected] main (refusing to delete the current branch: refs/heads/main)</span><br><span class="line">//GitHub页面 -&gt; Settings -&gt; Branchs -&gt; 将默认分区从 main 切换成 master。重新尝试命令。</span><br></pre></td></tr></table></figure><p>另外：<a href="https://www.cnblogs.com/runnerjack/p/9342362.html">git pull = git fetch + git merge</a></p>]]></content>
-    
-    
-    <summary type="html">这是我进行过的一些和 Git/GitHub 有关的值得记录下来的操作。</summary>
-    
-    
-    
-    <category term="Git" scheme="https://www.itaru.xyz/categories/Git/"/>
-    
-    
-    <category term="Git" scheme="https://www.itaru.xyz/tags/Git/"/>
     
   </entry>
   
