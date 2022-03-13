@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.itaru.xyz/blogs/deff31dd.html</loc>
+    
+    <lastmod>2022-03-13</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.itaru.xyz/blogs/2e5d65c9.html</loc>
     
     <lastmod>2022-03-05</lastmod>
@@ -284,7 +291,7 @@
 
   <url>
     <loc>https://www.itaru.xyz/</loc>
-    <lastmod>2022-03-05</lastmod>
+    <lastmod>2022-03-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
