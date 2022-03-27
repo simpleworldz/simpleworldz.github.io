@@ -6,7 +6,7 @@
   <link href="https://www.itaru.xyz/atom.xml" rel="self"/>
   
   <link href="https://www.itaru.xyz/"/>
-  <updated>2022-03-26T10:28:45.609Z</updated>
+  <updated>2022-03-27T02:01:27.859Z</updated>
   <id>https://www.itaru.xyz/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.itaru.xyz/blogs/1fb53bbd.html"/>
     <id>https://www.itaru.xyz/blogs/1fb53bbd.html</id>
     <published>2022-03-26T09:58:55.000Z</published>
-    <updated>2022-03-26T10:28:45.609Z</updated>
+    <updated>2022-03-27T02:01:27.859Z</updated>
     
     <content type="html"><![CDATA[<p>使用 Visual Studio 过程中遇到的一些小技巧汇总。</p><h3 id="命令行编译器（csc）"><a href="#命令行编译器（csc）" class="headerlink" title="命令行编译器（csc）"></a>命令行编译器（csc）</h3><p>可以使用 csc 指令编译指定的类，前提是这些类中包含程序入口 Main 函数，以及选中的类没有编译错误。没选中的类，即使是在同一程序集中，也不会影响编译。</p><blockquote><p>视图 -&gt; 终端 -&gt; cd（非必须） -&gt; csc</p></blockquote><p>执行下图指令，会在该文件夹下生成 exe 文件。</p><p><img src="https://ih.itaru.xyz/images/20211221205200.png" alt="20211221205200"></p><p>如果该类使用了别的<code>自定义类</code>，得一同编译。</p><p><img src="https://ih.itaru.xyz/images/20211221205606.png" alt="20211221205606"></p><p>参考：<a href="https://www.cnblogs.com/gibbonnet/p/5420548.html">VS C#命令行编译工具CSC使用入门</a></p><h3 id="即时窗口"><a href="#即时窗口" class="headerlink" title="即时窗口"></a>即时窗口</h3><!-- ![20211219104615](https://ih.itaru.xyz/images/20211219104615.png) --><blockquote><p>调试 -&gt; 窗口 -&gt; 即时</p></blockquote><p>如下图所示，int 类型的局部变量也是声明后会赋默认值 0 的。（后来知道，其实不能叫赋值，而是赋值之前会包含一个<code>未定义值</code>，是不能使用的，否则编译器会报错）。</p><p><img src="https://ih.itaru.xyz/images/20211221094536.png" alt="20211221094536"></p><p>即时窗口可以动态改变变量的值（未定义值也可以改变）。改变值后可以继续执行程序。</p><p><img src="https://ih.itaru.xyz/images/20211221094707.png" alt="20211221094707"></p><p>参考：<a href="https://www.cnblogs.com/willick/p/14071945.html">https://www.cnblogs.com/willick/p/14071945.html</a></p>]]></content>
     
