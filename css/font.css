@@ -1,1 +1,48 @@
-@font-face{font-family:hytmr55;src:url(/fonts/hytmr55.woff)}#aside-content .author-info__description{font-family:hytmr55}.not-home-page #site-title{font-family:hytmr55}
+/* 自定义字体 */
+
+/*声明 WebFont*/
+
+/* @font-face {
+
+    font-family: 'hytmr55';
+  
+    src: url('/fonts/hytmr55.eot');
+  
+    src:
+  
+      url('/fonts/hytmr55.eot?#font-spider') format('embedded-opentype'),
+  
+      url('/fonts/hytmr55.woff') format('woff'),
+  
+      url('/fonts/hytmr55.ttf') format('truetype'),
+  
+      url('/fonts/hytmr55.svg') format('svg');
+      
+    font-weight: normal;
+  
+    font-style: normal;
+  
+} */
+
+
+@font-face {
+    font-family: 'hytmr55';
+    src: url('/fonts/hytmr55.woff');
+}
+
+#aside-content .author-info__description {
+    font-family: 'hytmr55';
+}
+
+.not-home-page #site-title {
+    font-family: 'hytmr55';
+}
+
+/* @font-face {
+    font-family: 'Kiwi Maru';
+    src: url('https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap');
+}
+
+body {
+    font-family: 'Kiwi Maru', serif;
+} */

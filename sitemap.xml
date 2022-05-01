@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.itaru.xyz/blogs/7ef1fb9e.html</loc>
+    <loc>https://www.itaru.xyz/blogs/7c4af78d.html</loc>
     
-    <lastmod>2022-04-17</lastmod>
+    <lastmod>2022-05-01</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.itaru.xyz/blogs/7c4af78d.html</loc>
+    <loc>https://www.itaru.xyz/blogs/9dd8d7f0.html</loc>
     
-    <lastmod>2022-04-04</lastmod>
+    <lastmod>2022-05-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.itaru.xyz/blogs/7ef1fb9e.html</loc>
+    
+    <lastmod>2022-04-17</lastmod>
     
   </url>
   
@@ -291,7 +298,7 @@
 
   <url>
     <loc>https://www.itaru.xyz/</loc>
-    <lastmod>2022-04-17</lastmod>
+    <lastmod>2022-05-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
